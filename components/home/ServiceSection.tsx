@@ -13,7 +13,7 @@ const ServicesSection = () => {
   return (
     <Container 
       id="services" 
-      backgroundColor="linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%)"
+      $backgroundColor="linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%)"
     >
       <ContentWrapper>
         <Header>
