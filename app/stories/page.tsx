@@ -32,7 +32,7 @@ const ProjectGroup = ({
 }) => (
   <ProjectGroupContainer>
     <ProjectGroupHeader>
-      <ProjectGroupLabel isRecent={isRecent}>{label}</ProjectGroupLabel>
+      <ProjectGroupLabel $isRecent={isRecent}>{label}</ProjectGroupLabel>
       <ProjectGroupDescription>{description}</ProjectGroupDescription>
     </ProjectGroupHeader>
     <ProjectGrid>
@@ -157,7 +157,7 @@ const ProjectGroupHeader = styled.div`
   gap: 0.75rem;
 `;
 
-const ProjectGroupLabel = styled.span<{ isRecent?: boolean }>`
+const ProjectGroupLabel = styled.span<{ $isRecent?: boolean }>`
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -165,11 +165,11 @@ const ProjectGroupLabel = styled.span<{ isRecent?: boolean }>`
   padding: 0.25rem 0.75rem;
   border-radius: 9999px;
   background: ${(props) =>
-    props.isRecent
+    props.$isRecent
       ? "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
       : "hsl(var(--secondary))"};
   color: ${(props) =>
-    props.isRecent ? "white" : "hsl(var(--secondary-foreground))"};
+    props.$isRecent ? "white" : "hsl(var(--secondary-foreground))"};
 `;
 
 const ProjectGroupDescription = styled.p`

@@ -181,9 +181,9 @@ export const projects: Project[] = [
     },
 
     screenshots: [
-      "/assets/screen1.png",
-      "/assets/screen2.png",
-      "/assets/screen3.png",
+      "/assets/e-commerce-hero.png",
+      "/assets/screenshot1.png",
+      "/assets/screenshot2.png",
     ],
 
     context: {
@@ -473,7 +473,7 @@ export const projects: Project[] = [
     origin: "Built after recreating a smart home dashboard concept from Dribbble",
     liveUrl: "YOUR_LIVE_URL",
     githubUrl: "YOUR_GITHUB_URL",
-    heroImage: "/mock/projects/smart-dashboard/hero.png",
+    heroImage: "/assets/screen1.png",
     thumbnail: "/mock/projects/smart-dashboard/thumbnail.png"
   },
 
@@ -819,7 +819,7 @@ category: "web-early",
 
     githubUrl: "YOUR_GITHUB_URL",
 
-    heroImage: "/mock/projects/converter-toolkit/hero.png",
+    heroImage: "/assets/screen2.png",
 
     thumbnail: "/mock/projects/converter-toolkit/thumbnail.png"
   },
@@ -1225,7 +1225,7 @@ category: "web-early",
 
     githubUrl: "YOUR_GITHUB_URL",
 
-    heroImage: "/mock/projects/allgates/hero.png",
+    heroImage: "/assets/screen3.png",
 
     thumbnail: "/mock/projects/allgates/thumbnail.png"
   },
@@ -1629,7 +1629,7 @@ category: "web-early",
       "Inspired by a simple budgeting tutorial but expanded into a much larger financial management system.",
     liveUrl: "YOUR_LIVE_URL",
     githubUrl: "YOUR_GITHUB_URL",
-    heroImage: "/mock/projects/allgates/hero.png",
+    heroImage: "/assets/screen4.png",
 
     thumbnail: "/mock/projects/allgates/thumbnail.png"
   },
@@ -1983,7 +1983,7 @@ category: "web-early",
       "Built as my first serious attempt at understanding how React applications work internally.",
     liveUrl: "YOUR_LIVE_URL",
     githubUrl: "YOUR_GITHUB_URL",
-   heroImage: "/mock/projects/allgates/hero.png",
+   heroImage: "/assets/screen5.png",
 
     thumbnail: "/mock/projects/allgates/thumbnail.png"
   },
