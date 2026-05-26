@@ -164,17 +164,7 @@ const TutorialIconContainer = styled.div`
 `;
 
 // Service Card Components
-const ServiceTitle = styled.h3`
-  font-weight: 600;
-  color: #111827;
-  margin-bottom: 0.5rem;
-`;
 
-const ServiceDescription = styled.p`
-  font-size: 0.875rem;
-  color: #6b7280;
-  line-height: 1.6;
-`;
 
 // Tutorial Card Components
 const Category = styled.span`

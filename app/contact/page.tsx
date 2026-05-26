@@ -76,7 +76,7 @@ const Contact = () => {
 
         <HeroSectionNoImage />
 
-      <Section backgroundColor="#f8fafc">
+      <Section $backgroundColor="#f8fafc">
         <ContentWrapper>
           <TwoColumnGrid>
             <LeftColumn>
@@ -102,7 +102,7 @@ const Contact = () => {
         </ContentWrapper>
       </Section>
 
-      <Section backgroundColor="#eef2ff">
+      <Section $backgroundColor="#eef2ff">
         <ContentWrapper>
           <CenterHeader>
             <SectionTitle>Or reach me directly</SectionTitle>
@@ -151,8 +151,8 @@ const Contact = () => {
 export default Contact;
 
 
-const Section = styled(Container)<{ backgroundColor?: string }>`
-  background: ${(props) => props.backgroundColor ?? "transparent"};
+const Section = styled(Container)<{ $backgroundColor?: string }>`
+  background: ${(props) => props.$backgroundColor ?? "transparent"};
 `;
 
 

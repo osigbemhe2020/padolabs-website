@@ -28,7 +28,7 @@ const container = {
 
 const AboutSection = () => {
   return (
-    <Container backgroundColor={"linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%)"}>
+    <Container $backgroundColor={"linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%)"}>
       <ContentWrapper>
         <AboutGrid
           variants={container}

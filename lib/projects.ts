@@ -61,42 +61,57 @@ export const webEarly: Project[] = [
         "CSS",
         "Responsive Design"],
     slug: "ecommerce-homepage-ui",
-    image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=600&h=400&fit=crop",
+    image: "assets/ecommerce-homepage-ui.png",
   },
   {
     title: "Smart Home Dashboard",
     desc: "An interactive smart home dashboard inspired by a Dribbble concept, built to explore responsive dashboard architecture, energy visualization, and dynamic UI behavior using JavaScript and Chart.js.",
     tags: ["JavaScript", "CSS3", "LocalStorage"],
     slug: "smart-home-dashboard",
-    image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&h=400&fit=crop",
+    image: "assets/screen1.png",
   },
   {
-    title: "Weather Dashboard",
-    desc: "Developed a weather app consuming a public API with dynamic backgrounds based on current conditions.",
-    tags: ["React", "REST API", "CSS Modules"],
-    image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop",
+    title: "JavaScript Converter Toolkit",
+    desc: "A collection of interactive JavaScript mini tools built to understand DOM manipulation, event handling, API integration, and real-time interface updates.",
+    tags: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+    ],
+    image: "assets/screen2.png",
+    slug: "javascript-converter-toolkit"
   },
 ];
 
 export const webRecent: Project[] = [
   {
-    title: "E-Commerce Platform Rebuild",
-    desc: "Re-architected a legacy e-commerce platform to a modern stack, improving load times by 70% and conversion by 25%.",
-    tags: ["Next.js", "PostgreSQL", "Stripe", "Tailwind"],
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
-    slug: "ecommerce-platform-rebuild",
+    title: "React Quiz Application",
+    desc: "My first React application focused on component architecture, state management, props, hooks, and declarative UI development.",
+    tags: [
+      "React",
+      "JavaScript",
+      "Vanila CSS",
+    ],
+    image: "/assets/screen5.png",
+    slug: "react-quiz-app",
   },
   {
-    title: "Developer Portfolio CMS",
-    desc: "Built a headless CMS tailored for developer portfolios with markdown support, analytics, and custom themes.",
-    tags: ["React", "Supabase", "MDX", "Vercel"],
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+    title: "Budget Management App",
+    desc: "A personal finance dashboard built with Vanilla JavaScript focused on state management, DOM manipulation, CRUD operations, and localStorage persistence.",
+    tags: [ "HTML","JavaScript", "Vanilla CSS", "LocalStorage"],
+    image: "/assets/screen4.png",
+    slug: "budget-app",
   },
   {
-    title: "Real-Time Collaboration Tool",
-    desc: "Created a multiplayer whiteboard app with WebSocket-powered real-time sync and conflict resolution.",
-    tags: ["React", "WebSocket", "Node.js", "Redis"],
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop",
-    slug: "realtime-collaboration-tool",
+    title: "All Gates Training Website",
+    desc: "A multi-page educational training website built in my early days a, where I explored frontend development, layout systems, Bootstrap integration, and early design thinking.",
+    tags: [
+      "HTML",
+      "CSS",
+      "Bootstrap",
+      "JavaScript"
+    ],
+    image: "/assets/screen3.png",
+    slug: "allgates-training-website",
   },
 ];

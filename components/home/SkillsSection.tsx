@@ -10,7 +10,7 @@ const skills = [
 
 const SkillsSection = () => {
   return (
-    <Container backgroundColor={'rgba(102, 126, 234, 0.1)'}>
+    <Container $backgroundColor={'rgba(102, 126, 234, 0.1)'}>
       <SkillsWrapper>
         <SkillsGrid>
           {skills.concat(skills).map((skill, index) => (

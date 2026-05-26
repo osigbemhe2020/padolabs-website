@@ -4,9 +4,9 @@ import styled from 'styled-components'
 export const PageWrapper = styled.div`
   min-height: 100vh;
 `;
-export const Container = styled.section<{ backgroundColor?: string }>`
+export const Container = styled.section<{ $backgroundColor?: string }>`
   padding: 3rem 1.25rem;
-  background: ${props => props.backgroundColor ? props.backgroundColor : 'white'};
+  background: ${props => props.$backgroundColor ? props.$backgroundColor : 'white'};
   position: relative;
 
   @media (min-width: 768px) {
@@ -87,7 +87,7 @@ export const TextContent = styled.div`
 export const ContentWrapper = styled.div`
   margin: 0 auto;
   padding: 0 1.25rem;
-  max-width: 1200px;
+  max-width: 1300px;
   text-align: center;
 
   @media (min-width: 1024px) {

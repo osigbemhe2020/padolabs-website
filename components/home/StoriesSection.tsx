@@ -2,7 +2,7 @@
 import { Container, ContentWrapper, Header } from "../shared/Wrappers.styled";
 import { TitleText, GradientText, NormalText } from "../shared/Text.styled";
 import { ProjectCard } from "../shared/Cards";
-import { embeddedRecent } from "@/lib/projects";
+import { webRecent } from "@/lib/projects";
 import { motion } from "framer-motion";
 import styled from 'styled-components';
 
@@ -25,6 +25,9 @@ const StoriesGrid = styled(motion.section)`
   gap: 2rem;
   justify-items: center;
   grid-template-columns: 1fr;
+  margin: 0 auto;
+  width: 100%;
+  
 
   @media (min-width: 640px) {
     grid-template-columns: repeat(2, 1fr);
@@ -54,7 +57,7 @@ const StoriesSection = () => {
           whileInView="show"
           viewport={{ once: true, amount: 0.1 }}
         >
-          {embeddedRecent.slice(0, 4).map((project) => (
+          {webRecent.slice(0, 4).map((project) => (
             <motion.div
               key={project.title}
               variants={cardVariants}
