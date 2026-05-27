@@ -15,6 +15,7 @@ import AboutSection from "@/components/home/AboutSection";
 import CTASection from "@/components/home/CTASection";
 import Footer from "@/components/layout/Footer";
 import { PageWrapper } from "@/components/shared/Wrappers.styled";
+import Link from "next/link";
 
 export default function HomePage() {
   return (
@@ -48,10 +49,14 @@ export default function HomePage() {
           imageAlt="Abstract tech illustration"
           buttons={
             <>
+              <Link href="/contact">
               <PrimaryButton>
                 Hire Me <ArrowRight size={18} style={{ marginLeft: "8px" }} />
               </PrimaryButton>
-              <SecondaryButton>View Stories</SecondaryButton>
+              </Link>
+              <Link href="/stories">
+                <SecondaryButton>View Stories</SecondaryButton>
+              </Link>
             </>
           }
         />

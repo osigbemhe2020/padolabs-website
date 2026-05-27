@@ -61,7 +61,7 @@ export const webEarly: Project[] = [
         "CSS",
         "Responsive Design"],
     slug: "ecommerce-homepage-ui",
-    image: "assets/ecommerce-homepage-ui.png",
+    image: "assets/ecommerce-hero.png",
   },
   {
     title: "Smart Home Dashboard",
