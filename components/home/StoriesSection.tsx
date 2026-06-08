@@ -1,13 +1,12 @@
 
 "use client";
 
-import { useEffect, useState } from "react";
+
 import { Container, Header } from "../shared/Wrappers.styled";
 import { TitleText, GradientText, NormalText } from "../shared/Text.styled";
 import { ProjectCard, ProjectGrid } from "../shared/Cards";
 import { motion } from "framer-motion";
-import { allProjectsQuery } from "@/sanity/lib/queries";
-import { client } from "@/sanity/lib/client";
+
 import {
   //embeddedEarly,
   //embeddedRecent,
@@ -17,18 +16,8 @@ import {
 } from "@/lib/projects";
 
 
-const StoriesSection = () => {
-  const [sanityWebRecent, setSanityWebRecent] = useState<Project[]>([]);
-
-  useEffect(() => {
-    client.fetch(allProjectsQuery).then((sanityProjects) => {
-      setSanityWebRecent(
-        sanityProjects.filter((p: Project) => p.category?.categorySlug === "web-recent")
-      );
-    });
-  }, []);
-
-  console.log("Sanity Web Recent Projects:", sanityWebRecent);
+const StoriesSection = ({ projects }: { projects: Project[] }) => {
+ 
   return (
     <Container >
       <div style={{
@@ -45,7 +34,7 @@ const StoriesSection = () => {
         </Header>
 
         <ProjectGrid>
-          {sanityWebRecent.slice(0, 4).map((p: Project) => (
+          {projects.slice(0, 4).map((p: Project) => (
             <motion.div
               key={p._id ?? p.slug ?? p.title}
               initial={{ opacity: 0, y: 40 }}

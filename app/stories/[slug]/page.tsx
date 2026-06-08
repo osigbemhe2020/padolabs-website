@@ -35,16 +35,18 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { slug?: string };
+  params: Promise<{ slug?: string }>;
 }): Promise<Metadata> {
-  if (!params?.slug) {
+  const { slug } = await params;
+
+  if (!slug) {
     return {
       title: "Project Story | PadoLabs",
       description: "A project story page from PadoLabs.",
     };
   }
 
-  const project = await client.fetch(singleProjectQuery, { slug: params.slug });
+  const project = await client.fetch(singleProjectQuery, { slug });
 
   if (!project) {
     return {
