@@ -1,4 +1,4 @@
-import { defineType, defineField, SanityDocument } from 'sanity';
+import { defineType, defineField, defineArrayMember, SanityDocument } from 'sanity';
 
 interface ProjectDocument extends SanityDocument {
   meta?: {
@@ -161,14 +161,7 @@ export default defineType({
             hotspot: true,
           },
         }),
-        defineField({
-          name: 'thumbnail',
-          title: 'Thumbnail',
-          type: 'image',
-          options: {
-            hotspot: true,
-          },
-        }),
+        
       ],
     }),
 
@@ -206,9 +199,8 @@ export default defineType({
         defineField({
           name: 'body',
           title: 'Body Content',
-          type: 'array',
-          of: [{ type: 'string' }],
-          validation: (Rule) => Rule.required().min(1),
+          type: 'text',
+          validation: (Rule) => Rule.required(),
         }),
         defineField({
           name: 'highlightQuote',
@@ -277,6 +269,14 @@ export default defineType({
           type: 'text',
         }),
         defineField({
+          name: 'ChallengeImage',
+          title: 'Challenge Image',
+          type: 'image',
+          options: {
+            hotspot: true,
+          },
+        }),
+        defineField({
           name: 'items',
           title: 'Challenges',
           type: 'array',
@@ -342,6 +342,14 @@ export default defineType({
                   type: 'text',
                   validation: (Rule) => Rule.required(),
                 }),
+                defineField({
+              name: 'image',
+              title: 'Image',
+              type: 'image',
+              options: {
+                hotspot: true,
+              },
+            }),
               ],
             },
           ],
@@ -526,7 +534,131 @@ export default defineType({
     }),
 
     
-    
+
+    // schemas/project.ts (or wherever your document lives)
+
+
+
+    // ── features ──────────────────────────────────────────
+    defineField({
+      name: 'features',
+      title: 'Key Features',
+      type: 'object',
+      fields: [
+        defineField({
+          name: 'title',
+          title: 'Section Title',
+          type: 'string',
+          initialValue: 'Key Features',
+        }),
+        defineField({
+          name: 'items',
+          title: 'Feature Items',
+          type: 'array',
+          of: [
+            defineArrayMember({
+              type: 'object',
+              fields: [
+                defineField({
+                  name: 'title',
+                  title: 'Feature Title',
+                  type: 'string',
+                }),
+                defineField({
+                  name: 'description',
+                  title: 'Description',
+                  type: 'text',
+                  rows: 3,
+                }),
+              ],
+              preview: {
+                select: { title: 'title', subtitle: 'description' },
+              },
+            }),
+          ],
+        }),
+      ],
+    }),
+
+    // ── engineeringDecisions ──────────────────────────────
+    defineField({
+      name: 'engineeringDecisions',
+      title: 'Engineering Decisions',
+      type: 'object',
+      fields: [
+        defineField({
+          name: 'title',
+          title: 'Section Title',
+          type: 'string',
+          initialValue: 'Engineering Decisions',
+        }),
+        defineField({
+          name: 'items',
+          title: 'Decision Items',
+          type: 'array',
+          of: [
+            defineArrayMember({
+              type: 'object',
+              fields: [
+                defineField({
+                  name: 'decision',
+                  title: 'Decision',
+                  type: 'text',
+                  rows: 2,
+                }),
+                defineField({
+                  name: 'reason',
+                  title: 'Reason',
+                  type: 'text',
+                  rows: 3,
+                }),
+              ],
+              preview: {
+                select: { title: 'decision', subtitle: 'reason' },
+              },
+            }),
+          ],
+        }),
+      ],
+    }),
+
+    // ── retrospective ─────────────────────────────────────
+    defineField({
+      name: 'retrospective',
+      title: 'Retrospective',
+      type: 'object',
+      fields: [
+        defineField({
+          name: 'title',
+          title: 'Section Title',
+          type: 'string',
+          initialValue: 'Retrospective',
+        }),
+        defineField({
+          name: 'items',
+          title: 'Reflections',
+          type: 'array',
+          of: [
+            defineArrayMember({
+              type: 'object',
+              fields: [
+                defineField({
+                  name: 'text',
+                  title: 'Reflection',
+                  type: 'text',
+                  rows: 2,
+                }),
+              ],
+              preview: {
+                select: { title: 'text' },
+              },
+            }),
+          ],
+        }),
+      ],
+    }),
+
+ 
     // CTA Section
     defineField({
       name: 'cta',

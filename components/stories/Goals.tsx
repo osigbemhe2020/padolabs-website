@@ -24,13 +24,13 @@ const Goals = ({ goals, num }: GoalsProps) => {
   const goalsItems = goals.items;
   const goalsTitle = goals.title;
   return (
-    <StorySection id="goals" gradient="none">
+    <StorySection id="goals" gradient="lightpurple">
       <ContentContainer>
         <SectionHeader eyebrow={num} title={goalsTitle} />
         <GoalsGrid>
-          {goalsItems.map((g) => {
+          {goalsItems.map((g, index) => {
             return (
-              <InteractiveStoryCard key={g.title}>
+              <InteractiveStoryCard key={`${g.title}-${index}`}>
                 
                 <GoalTitle>{g.title}</GoalTitle>
                 <GoalDescription>{g.description}</GoalDescription>

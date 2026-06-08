@@ -112,14 +112,14 @@ const AccordionItemComponent: React.FC<{ item: LearningItem; index: number }> = 
 
 const Learnings: React.FC<LearningsProps> = ({ learnings }) => {
   return (
-    <StorySection id="learnings" gradient="hsl">
+    <StorySection id="learnings" gradient="lightpurple">
       
       <ContentContainer>
         <SectionHeader eyebrow="06" title="Technical takeaways" />
         <AccordionContainer>
           {learnings.map((learning, index) => (
             <AccordionItemComponent
-              key={learning.title}
+              key={`${learning.title}-${index}`}
               item={learning}
               index={index}
             />

@@ -1,0 +1,1 @@
+[ "Believed localStorage could handle most application requirements", "Focused primarily on frontend implementation", "Viewed authentication mainly as a UI workflow", "Had limited understanding of data persistence challenges" ]

@@ -16,15 +16,19 @@ export const ProjectCard = ({ project, showReadMore = true }: ProjectCardProps) 
   <Card>
     <ImageContainer>
       <ProjectImage
-        src={project.image}
-        alt={project.title}
+        src={
+          project.hero?.heroImage?.asset?.url ||
+          project.hero?.thumbnail?.asset?.url ||
+          project.image
+        }
+        alt={project.meta?.title}
       />
     </ImageContainer>
     <CardContent>
-      <CardTitle>{project.title}</CardTitle>
-      <CardDescription>{project.desc}</CardDescription>
+      <CardTitle>{project.meta?.title}</CardTitle>
+      <CardDescription>{project.meta?.description}</CardDescription>
       <TagsContainer>
-        {project.tags.map((tag) => (
+        {project.meta?.keywords?.slice(0, 7).map((tag) => (
           <Tag key={tag}>{tag}</Tag>
         ))}
       </TagsContainer>
@@ -120,6 +124,7 @@ const Card = styled.div`
   border-radius: 0.75rem;
   min-width: 24rem;
   min-height: 16rem;
+  height: 100%;
   background: white;
   overflow: hidden;
   border: 1px solid #e5e7eb;

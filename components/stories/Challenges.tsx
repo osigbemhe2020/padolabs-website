@@ -34,7 +34,7 @@ const Challenges = ({ challenges }: ChallengesProps) => {
             <ChallengesGrid>
             <ChallengesContent>
               {challengesArray.map((c, i) => (
-                <Challenge key={c.title}>
+                <Challenge key={`${c.title}-${i}`}>
                   <ChallengeHeader>
                     <ChallengeNumber>0{i + 1}</ChallengeNumber>
                     <Badge $variant="challenge">{c.title}</Badge>

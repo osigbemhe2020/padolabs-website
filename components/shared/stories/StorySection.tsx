@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { SectionAnchor } from '../Layout.styled';
 
 type PaddingVariant = 'default' | 'compact';
-type GradientVariant = 'rgba' | 'hsl' | 'none';
+type GradientVariant = 'lightpurple' | 'hsl' | 'none';
 
 interface StorySectionProps {
   id?: string;
@@ -18,11 +18,12 @@ const paddingStyles: Record<PaddingVariant, ReturnType<typeof css>> = {
 
 const gradientStyles: Record<GradientVariant, ReturnType<typeof css>> = {
   none: css``,
-  rgba: css`
-    background: linear-gradient(to bottom, transparent, rgba(118, 75, 162, 0.3), transparent);
-  `,
+  
   hsl: css`
     background: linear-gradient(to bottom, transparent, rgba(118, 75, 162, 0.3), transparent);
+  `,
+  lightpurple: css`
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
   `,
 };
 

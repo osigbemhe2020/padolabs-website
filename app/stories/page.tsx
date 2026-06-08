@@ -4,13 +4,17 @@ import styled from "styled-components";
 import {
   //embeddedEarly,
   //embeddedRecent,
-  webEarly,
-  webRecent,
+  //webEarly,
+  //webRecent,
   type Project,
 } from "@/lib/projects";
+
 import { ProjectCard, ProjectGrid } from "@/components/shared/Cards";
 import { TitleText, GradientText, NormalText } from "@/components/shared/Text.styled";
 import { PageHeader, PageWrapper } from "@/components/shared/Wrappers.styled";
+import { client } from "@/sanity/lib/client";
+import { allProjectsQuery } from "@/sanity/lib/queries";
+//import { urlFor } from "@/sanity/lib/image";
 
 // ── New import ────────────────────────────────────────────────────────────────
 // SimpleTabBar accepts a `tabs` array where each item has a title and a
@@ -36,8 +40,8 @@ const ProjectGroup = ({
       <ProjectGroupDescription>{description}</ProjectGroupDescription>
     </ProjectGroupHeader>
     <ProjectGrid>
-      {projects.map((p) => (
-        <ProjectCard key={p.title} project={p} />
+      {projects.slice(0, 3).map((p) => (
+        <ProjectCard key={p._id ?? p.meta?.title} project={p} />
       ))}
     </ProjectGrid>
   </ProjectGroupContainer>
@@ -77,42 +81,111 @@ const CategorySection = ({
 
 // ─── Main Page ────────────────────────────────────────────────────────────────
 
-const Stories = () => {
-  // Define the tabs array.
-  // Each tab has:
-  //   title   — the label shown on the tab button
-  //   component — the JSX rendered in that tab's panel
-  //
-  // We render CategorySection as JSX here (not a component class reference)
-  // because SimpleTabBar accepts pre-rendered ReactNode, not component types.
-  // This keeps SimpleTabBar simple — no need for generic props passing.
+// const Stories = async () => {
+//   // Define the tabs array.
+//   // Each tab has:
+//   //   title   — the label shown on the tab button
+//   //   component — the JSX rendered in that tab's panel
+//   //
+//   // We render CategorySection as JSX here (not a component class reference)
+//   // because SimpleTabBar accepts pre-rendered ReactNode, not component types.
+//   // This keeps SimpleTabBar simple — no need for generic props passing.
+
+//   const sanityProjects = await client.fetch(allProjectsQuery);
+//     console.log('Sanity projects in stories page>>>>>', sanityProjects);
+     
+//     const test = sanityProjects[0].category?.slug.current === 'web-early';
+//     console.log('test category slug >>>>>', test);
+
+//     const sanitywebEarly = sanityProjects.filter((p: Project) => p.category?.slug?.current === 'web-early');
+    
+
+//     console.log('sanity web early >>>>>', sanitywebEarly.meta);
+    
+//   const tabs = [
+//     {
+//       title: "Web Development",
+//       component: (
+//         <CategorySection
+//           title="Web Development"
+//           earlyProjects={sanitywebEarly}
+//           recentProjects={webRecent}
+//         />
+//       ),
+//     },
+//     // {
+//     //   title: "Embedded Systems & IoT",
+//     //   component: (
+//     //     <CategorySection
+//     //       title="Embedded Systems & IoT"
+//     //       earlyProjects={embeddedEarly}
+//     //       recentProjects={embeddedRecent}
+//     //     />
+//     //   ),
+//     // },
+//   ];
+
+//   return (
+//     <PageWrapper>
+//       <Navbar />
+
+//       <PageHeader>
+//         <TitleText>
+//           Project <GradientText>Stories</GradientText>
+//         </TitleText>
+//         <NormalText>Real projects, challenges, and lessons behind them</NormalText>
+//         <br />
+//         <PageAccent />
+//       </PageHeader>
+
+//       <MainContent>
+//         {/* ── Replaced the two stacked CategorySections with a TabBar ──
+//             Before:
+//               <CategorySection title="Web Development" ... />
+//               <CategorySection title="Embedded Systems & IoT" ... />
+
+//             After:
+//               <SimpleTabBar tabs={tabs} />
+
+//             The tab bar renders both sections internally but only shows one
+//             at a time using the translateX sliding technique. */}
+//         <SimpleTabBar tabs={tabs} />
+//       </MainContent>
+
+//       <Footer />
+//     </PageWrapper>
+//   );
+// };
+
+const Stories = async () => {
+  const sanityProjects = await client.fetch(allProjectsQuery);
+
+
+  // Filter by category name — category has no slug field
+ const sanityWebEarly = sanityProjects.filter(
+  (p: Project) => p.category?.categorySlug === "web-early"  // ← was "early-web"
+);
+
+const sanityWebRecent = sanityProjects.filter(
+  (p: Project) => p.category?.categorySlug === "web-recent"  // ← was "recent-web"
+);
+
   const tabs = [
     {
       title: "Web Development",
       component: (
         <CategorySection
           title="Web Development"
-          earlyProjects={webEarly}
-          recentProjects={webRecent}
+          earlyProjects={sanityWebEarly}
+          recentProjects={sanityWebRecent}   // swap this out once you migrate recent too
         />
       ),
     },
-    // {
-    //   title: "Embedded Systems & IoT",
-    //   component: (
-    //     <CategorySection
-    //       title="Embedded Systems & IoT"
-    //       earlyProjects={embeddedEarly}
-    //       recentProjects={embeddedRecent}
-    //     />
-    //   ),
-    // },
   ];
 
   return (
     <PageWrapper>
       <Navbar />
-
       <PageHeader>
         <TitleText>
           Project <GradientText>Stories</GradientText>
@@ -121,21 +194,9 @@ const Stories = () => {
         <br />
         <PageAccent />
       </PageHeader>
-
       <MainContent>
-        {/* ── Replaced the two stacked CategorySections with a TabBar ──
-            Before:
-              <CategorySection title="Web Development" ... />
-              <CategorySection title="Embedded Systems & IoT" ... />
-
-            After:
-              <SimpleTabBar tabs={tabs} />
-
-            The tab bar renders both sections internally but only shows one
-            at a time using the translateX sliding technique. */}
         <SimpleTabBar tabs={tabs} />
       </MainContent>
-
       <Footer />
     </PageWrapper>
   );
@@ -167,9 +228,9 @@ const ProjectGroupLabel = styled.span<{ $isRecent?: boolean }>`
   background: ${(props) =>
     props.$isRecent
       ? "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
-      : "hsl(var(--secondary))"};
+      : "#CBD5E1"};
   color: ${(props) =>
-    props.$isRecent ? "white" : "hsl(var(--secondary-foreground))"};
+    props.$isRecent ? "white" : "#475569"};
 `;
 
 const ProjectGroupDescription = styled.p`
@@ -181,6 +242,7 @@ const CategorySectionContainer = styled.section`
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
+
 `;
 
 const CategoryHeader = styled.div`
@@ -222,6 +284,7 @@ const MainContent = styled.main`
   max-width: 80rem;
   margin: 0 auto;
   padding: 0 1rem;
+  
   padding-bottom: 6rem;
 `;
 

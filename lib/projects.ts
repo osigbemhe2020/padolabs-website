@@ -4,6 +4,41 @@ export interface Project {
   tags: string[];
   image: string;
   slug?: string;
+  _id?: string;
+  category?: {
+    _id?: string;
+    name?: string;
+    categorySlug?: string;
+    slug?: {
+      current: string;
+    };
+    description?: string;
+  };
+  meta?: {
+    title?: string;
+    description?: string;
+    keywords?: string[];
+    year?: string;
+    phase?: string;
+    featured?: boolean;
+  };
+  hero?: {
+    heroImage?: {
+      asset?: {
+        url?: string;
+      };
+    };
+    thumbnail?: {
+      asset?: {
+        url?: string;
+      };
+    };
+  };
+  screenshots?: Array<{
+    asset?: {
+      url?: string;
+    };
+  }>;
 }
 
 

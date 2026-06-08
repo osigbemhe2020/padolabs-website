@@ -96,7 +96,7 @@ interface Showcase {
   }[];
 }
 
-interface Project {
+export interface Project {
   slug: string;
   category: string;
   meta: ProjectMeta;
@@ -517,31 +517,31 @@ export const projects: Project[] = [
     ]
   },
 
-  // features: {
-  //   title: "Key Features",
-  //   items: [
-  //     {
-  //       title: "Energy Consumption Dashboard",
-  //       description: "Integrated Chart.js to visualize historical smart home energy usage using mock analytics data."
-  //     },
-  //     {
-  //       title: "Responsive Dashboard Layout",
-  //       description: "Built a responsive multi-section dashboard using CSS Grid, Flexbox, and Bootstrap utilities."
-  //     },
-  //     {
-  //       title: "Custom Thermostat UI",
-  //       description: "Created an interactive thermostat control using JavaScript and CSS-based circular progress indicators."
-  //     },
-  //     {
-  //       title: "Custom Toggle Switches",
-  //       description: "Designed reusable toggle switch components for simulated smart device controls."
-  //     },
-  //     {
-  //       title: "Adaptive Mobile Experience",
-  //       description: "Implemented multiple responsive breakpoints to restructure dashboard sections for smaller devices."
-  //     }
-  //   ]
-  // },
+  features: {
+    title: "Key Features",
+    items: [
+      {
+        title: "Energy Consumption Dashboard",
+        description: "Integrated Chart.js to visualize historical smart home energy usage using mock analytics data."
+      },
+      {
+        title: "Responsive Dashboard Layout",
+        description: "Built a responsive multi-section dashboard using CSS Grid, Flexbox, and Bootstrap utilities."
+      },
+      {
+        title: "Custom Thermostat UI",
+        description: "Created an interactive thermostat control using JavaScript and CSS-based circular progress indicators."
+      },
+      {
+        title: "Custom Toggle Switches",
+        description: "Designed reusable toggle switch components for simulated smart device controls."
+      },
+      {
+        title: "Adaptive Mobile Experience",
+        description: "Implemented multiple responsive breakpoints to restructure dashboard sections for smaller devices."
+      }
+    ]
+  },
 
   challenges: {
     title: "Challenges",
@@ -570,27 +570,27 @@ export const projects: Project[] = [
     ]
   },
 
-  // engineeringDecisions: {
-  //   title: "Engineering Decisions",
-  //   items: [
-  //     {
-  //       decision: "Used CSS Grid for dashboard structure",
-  //       reason: "The dashboard contained multiple content-heavy sections that required flexible two-dimensional layout control."
-  //     },
-  //     {
-  //       decision: "Combined Bootstrap utilities with custom CSS",
-  //       reason: "Bootstrap accelerated spacing and responsiveness while custom CSS handled unique dashboard components and styling."
-  //     },
-  //     {
-  //       decision: "Used mock analytics data",
-  //       reason: "The focus of the project was frontend visualization and UI architecture rather than backend integration."
-  //     },
-  //     {
-  //       decision: "Built custom UI controls manually",
-  //       reason: "Creating components like toggle switches and progress indicators helped deepen my understanding of CSS-driven interactivity."
-  //     }
-  //   ]
-  // },
+  engineeringDecisions: {
+    title: "Engineering Decisions",
+    items: [
+      {
+        decision: "Used CSS Grid for dashboard structure",
+        reason: "The dashboard contained multiple content-heavy sections that required flexible two-dimensional layout control."
+      },
+      {
+        decision: "Combined Bootstrap utilities with custom CSS",
+        reason: "Bootstrap accelerated spacing and responsiveness while custom CSS handled unique dashboard components and styling."
+      },
+      {
+        decision: "Used mock analytics data",
+        reason: "The focus of the project was frontend visualization and UI architecture rather than backend integration."
+      },
+      {
+        decision: "Built custom UI controls manually",
+        reason: "Creating components like toggle switches and progress indicators helped deepen my understanding of CSS-driven interactivity."
+      }
+    ]
+  },
 
   process: {
     title: "Development Process",
@@ -872,36 +872,36 @@ category: "web-early",
   }]
   },
 
-  // features: {
-  //   title: "Key Features",
+  features: {
+    title: "Key Features",
 
-  //   items: [
-  //     {
-  //       title: "Unit Conversion Tool",
-  //       description: "Built a utility for converting measurement values like kilograms to pounds and vice versa."
-  //     },
+    items: [
+      {
+        title: "Unit Conversion Tool",
+        description: "Built a utility for converting measurement values like kilograms to pounds and vice versa."
+      },
 
-  //     {
-  //       title: "Currency Exchange Converter",
-  //       description: "Integrated an external exchange-rate API to dynamically calculate and display currency conversions."
-  //     },
+      {
+        title: "Currency Exchange Converter",
+        description: "Integrated an external exchange-rate API to dynamically calculate and display currency conversions."
+      },
 
-  //     {
-  //       title: "Roman Numeral Converter",
-  //       description: "Implemented logic for converting numerical values into Roman numeral representations."
-  //     },
+      {
+        title: "Roman Numeral Converter",
+        description: "Implemented logic for converting numerical values into Roman numeral representations."
+      },
 
-  //     {
-  //       title: "Dynamic DOM Updates",
-  //       description: "Updated interface content in real time based on user interactions and input values."
-  //     },
+      {
+        title: "Dynamic DOM Updates",
+        description: "Updated interface content in real time based on user interactions and input values."
+      },
 
-  //     {
-  //       title: "Multi-Page Structure",
-  //       description: "Organized the project into separate tools and files to improve maintainability and code separation."
-  //     }
-  //   ]
-  // },
+      {
+        title: "Multi-Page Structure",
+        description: "Organized the project into separate tools and files to improve maintainability and code separation."
+      }
+    ]
+  },
 
   challenges: {
     title: "Challenges",
@@ -936,31 +936,31 @@ category: "web-early",
     ]
   },
 
-  // engineeringDecisions: {
-  //   title: "Engineering Decisions",
+  engineeringDecisions: {
+    title: "Engineering Decisions",
 
-  //   items: [
-  //     {
-  //       decision: "Separated each converter into its own page and file structure",
-  //       reason: "This improved code organization and helped isolate functionality as the project grew."
-  //     },
+    items: [
+      {
+        decision: "Separated each converter into its own page and file structure",
+        reason: "This improved code organization and helped isolate functionality as the project grew."
+      },
 
-  //     {
-  //       decision: "Used vanilla JavaScript instead of frameworks",
-  //       reason: "The goal was to deeply understand core JavaScript concepts before moving into libraries like React."
-  //     },
+      {
+        decision: "Used vanilla JavaScript instead of frameworks",
+        reason: "The goal was to deeply understand core JavaScript concepts before moving into libraries like React."
+      },
 
-  //     {
-  //       decision: "Integrated a real exchange-rate API",
-  //       reason: "Adding external data made the project feel closer to a real-world frontend application."
-  //     },
+      {
+        decision: "Integrated a real exchange-rate API",
+        reason: "Adding external data made the project feel closer to a real-world frontend application."
+      },
 
-  //     {
-  //       decision: "Focused on functional interactivity over visual complexity",
-  //       reason: "The primary objective was understanding JavaScript behavior and DOM updates rather than advanced UI design."
-  //     }
-  //   ]
-  // },
+      {
+        decision: "Focused on functional interactivity over visual complexity",
+        reason: "The primary objective was understanding JavaScript behavior and DOM updates rather than advanced UI design."
+      }
+    ]
+  },
 
   process: {
     title: "Development Process",
@@ -1069,15 +1069,15 @@ category: "web-early",
     ]
   },
 
-  // retrospective: {
-  //   title: "Retrospective",
+  retrospective: {
+    title: "Retrospective",
 
-  //   items: [
-  //     "This project was one of the first times JavaScript started feeling practical instead of abstract.",
-  //     "I began understanding how interfaces react to user behavior through events and DOM updates.",
-  //     "The project also introduced me to structuring frontend logic in a more organized and maintainable way."
-  //   ]
-  // },
+    items: [
+      "This project was one of the first times JavaScript started feeling practical instead of abstract.",
+      "I began understanding how interfaces react to user behavior through events and DOM updates.",
+      "The project also introduced me to structuring frontend logic in a more organized and maintainable way."
+    ]
+  },
 
   growth: {
     title: "Growth & Evolution",

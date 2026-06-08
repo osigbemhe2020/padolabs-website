@@ -19,14 +19,14 @@ interface GrowthProps {
 
 const Growth: React.FC<GrowthProps> = ({ timelineData }) => {
   return (
-    <StorySection id="timeline">
+    <StorySection gradient="hsl">
       <ContentContainer>
         <SectionHeader eyebrow="07" title="Where this project fits" />
 
         <TimelineContainer>
           <TimelineLine />
           {timelineData.map((item, index) => (
-            <TimelineItem key={item.title}>
+            <TimelineItem key={`${item.title}-${index}`}>
               <TimelineDot />
               <Status>{item.status}</Status>
               <Title>{item.title}</Title>
