@@ -28,6 +28,7 @@ const StoriesSection = () => {
     });
   }, []);
 
+  console.log("Sanity Web Recent Projects:", sanityWebRecent);
   return (
     <Container >
       <div style={{
