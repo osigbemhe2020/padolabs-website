@@ -102,7 +102,7 @@ const Contact = () => {
         </ContentWrapper>
       </Section>
 
-      <Section $backgroundColor="#eef2ff">
+      {/* <Section $backgroundColor="#eef2ff">
         <ContentWrapper>
           <CenterHeader>
             <SectionTitle>Or reach me directly</SectionTitle>
@@ -120,9 +120,9 @@ const Contact = () => {
                 href={href}
               />
             ))}
-          </ContactMethodsGrid>
+          </ContactMethodsGrid> 
         </ContentWrapper>
-      </Section>
+      </Section> */}
 
       <Section>
         <ContentWrapper>
