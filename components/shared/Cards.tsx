@@ -122,8 +122,8 @@ export const ServiceCard = ({ service }: ServiceCardProps) => (
 const Card = styled.div`
   padding: 1.5rem;
   border-radius: 0.75rem;
-  min-width: 22rem;
-  max-width: 24rem;
+  min-width: 16rem;
+  max-width: 20rem;
   min-height: 16rem;
   height: 100%;
   background: white;
