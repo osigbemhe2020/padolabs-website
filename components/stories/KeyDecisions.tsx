@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import { GitCompare, Database, Cpu, Workflow, ShieldCheck, Boxes } from 'lucide-react';
-import { LucideIcon } from 'lucide-react';
+import { Boxes } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import { SectionHeader } from '../shared/SectionHeader';
 import { ContentContainer } from '../shared/Layout.styled';
 import { MonoLabel } from '../shared/Text.styled';
 
 export interface KeyDecision {
-  icon: LucideIcon;
+  icon?: LucideIcon;
   title: string;
   choice: string;
   rejected: string;
@@ -20,53 +20,8 @@ interface KeyDecisionsProps {
   subtitle?: string;
 }
 
-const defaultDecisions: KeyDecision[] = [
-  {
-    icon: Workflow,
-    title: 'Communication Protocol',
-    choice: 'MQTT pub/sub',
-    rejected: 'REST polling',
-    rationale: 'Lightweight, low-latency, and ideal for constrained devices over unreliable networks.',
-  },
-  {
-    icon: Cpu,
-    title: 'Runtime Architecture',
-    choice: 'Event-driven core',
-    rejected: 'Monolithic request loop',
-    rationale: 'Decouples I/O from logic so new features ship without touching critical paths.',
-  },
-  {
-    icon: Database,
-    title: 'State Persistence',
-    choice: 'Local-first buffer',
-    rejected: 'Server-only writes',
-    rationale: 'Preserves data through disconnects and reconciles cleanly when connectivity returns.',
-  },
-  {
-    icon: GitCompare,
-    title: 'Conflict Resolution',
-    choice: 'CRDT-based merge',
-    rejected: 'Operational Transform',
-    rationale: 'Simpler reasoning, easier scaling, and no central authority required for correctness.',
-  },
-  {
-    icon: ShieldCheck,
-    title: 'Error Strategy',
-    choice: 'Fail-safe + retry',
-    rejected: 'Hard fail on error',
-    rationale: 'Resilience over rigidity — users stay productive even during transient failures.',
-  },
-  {
-    icon: Boxes,
-    title: 'Module Boundaries',
-    choice: 'Hardware abstraction layer',
-    rejected: 'Direct register access',
-    rationale: 'Portable across MCU variants and dramatically faster to test in isolation.',
-  },
-];
-
 const KeyDecisions = ({
-  decisions = defaultDecisions,
+  decisions = [],
   eyebrow = '05',
   title = 'Key Engineering Decisions',
   subtitle = 'This are the core technicals decisions that shaped the project’s architecture and development approach.',
@@ -85,7 +40,10 @@ const KeyDecisions = ({
               <AccentStripe />
               <CardHeader>
                 <IconWrapper>
-                  <decision.icon size={20} />
+                  {(() => {
+                    const Icon = decision.icon ?? Boxes;
+                    return <Icon size={20} />;
+                  })()}
                 </IconWrapper>
                 <HeaderContent>
                   <Label>

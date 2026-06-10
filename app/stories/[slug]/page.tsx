@@ -16,6 +16,7 @@ import Challenges from "@/components/stories/Challenges";
 import Process from "@/components/stories/Process";
 import Learnings from "@/components/stories/Learnings";
 import Growth from "@/components/stories/Growth";
+import Reflections from "@/components/stories/Reflections";
 import CTASection from "@/components/home/CTASection";
 import { client } from "@/sanity/lib/client";
 import {
@@ -81,9 +82,9 @@ export async function generateMetadata({
       card: "summary_large_image",
     },
   };
-}
+};
 
-// ── Page ──────────────────────────────────────────────────────────────────────
+
 const ProjectStory = async ({ params }: { params: { slug: string } }) => {
   const { slug } = await params;
 
@@ -91,6 +92,9 @@ const ProjectStory = async ({ params }: { params: { slug: string } }) => {
   const project = await client.fetch(singleProjectQuery, { slug });
 
   if (!project) return <NotFound />;
+
+  console.log("project reflections data:", project.reflection);
+
 
 
   let nextProject = await client.fetch(nextProjectQuery, {
@@ -129,6 +133,8 @@ const ProjectStory = async ({ params }: { params: { slug: string } }) => {
     ...project.context,
     body: contextBody,
   };
+
+   console.log("Project data:", project);
 
   return (
     <PageWrapper>
@@ -222,10 +228,16 @@ const ProjectStory = async ({ params }: { params: { slug: string } }) => {
         <Learnings learnings={project.technicalLearnings.items} />
       )}
 
-      {/* Growth */}
-      {project.growth?.milestones?.length > 0 && (
-        <Growth timelineData={project.growth.milestones} />
+      
+
+      {/* Reflections */}
+      {project.reflection && (
+        <Reflections reflection={project.reflection} />
       )}
+      {/* Growth */}
+            {project.growth?.milestones?.length > 0 && (
+              <Growth timelineData={project.growth.milestones} />
+            )}
 
       <Border />
 

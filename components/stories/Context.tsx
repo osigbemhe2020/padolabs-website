@@ -4,7 +4,15 @@ import { Quote, Sparkles } from 'lucide-react';
 import { Container, ContentWrapper} from '../shared/Wrappers.styled';
 import { SectionHeader } from '../shared/SectionHeader';
 
-const Context = ({ project }: { project: any }) => (
+interface props {
+  context: {
+    body: string;
+    highlightQuote: string;
+    milestone: string;
+  };
+}
+
+const Context = ({ project }: { project: props }) => (
     <Container>
       <ContentWrapper>
       <ContextGrid>
@@ -17,12 +25,11 @@ const Context = ({ project }: { project: any }) => (
         <Card>
           <Quote className="text-primary/40 mb-4" size={32} />
           <QuoteP>
-            "Every project is a milestone — this one taught me to think in
-            systems, not screens."
+            {project.context.highlightQuote}
           </QuoteP>
           <Footer>
             <Sparkles size={16} className="text-primary" />
-            Milestone · First production-grade frontend build
+            Milestone · {project.context.milestone}
           </Footer>
         </Card>
       </ContextGrid>
