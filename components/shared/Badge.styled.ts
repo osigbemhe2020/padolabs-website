@@ -20,7 +20,7 @@ const variantStyles: Record<BadgeVariant, ReturnType<typeof css>> = {
     font-weight: 600;
     padding: 0.25rem 0.625rem;
     border-radius: 0.375rem;
-    background: rgba(var(--primary), 0.3);
+    background: hsl(var(--primary) / 0.3);
     color: white;
   `,
   timeline: css`

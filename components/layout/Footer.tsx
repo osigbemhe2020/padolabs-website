@@ -34,6 +34,7 @@ const Footer = () => {
 const FooterContainer = styled.footer`
   padding: 2.5rem 0;
   border-top: 1px solid #e5e7eb;
+  background: #ffffff;
 `;
 
 const FooterContentWrapper = styled.div`

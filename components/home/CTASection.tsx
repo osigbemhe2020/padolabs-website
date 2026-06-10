@@ -1,5 +1,5 @@
 import { Mail } from "lucide-react";
-import React from "react";
+import Link from "next/link";
 import styled from "styled-components";
 import { ContentWrapper, Container } from "../shared/Wrappers.styled";
 import { TitleText, NormalText } from "../shared/Text.styled";
@@ -24,9 +24,11 @@ const CTASection = ({ title, description, buttonText = "Get In Touch" }: CTASect
               {description}
             </NormalText>
           </Description>
+          <Link href="/contact" style={{ textDecoration: "none" }}>
           <CTAButton>
-            <Mail size={18} className="mr-2" /> {buttonText}
+            <Mail size={18} /> <span className="text">{buttonText}</span>
           </CTAButton>
+          </Link>
         </CTACard>
       </ContentWrapper>
     </Container>

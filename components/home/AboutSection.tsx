@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { ContentWrapper, Container } from "../shared/Wrappers.styled";
 import { TitleText, NormalText, GradientText } from "../shared/Text.styled";
 import {  PrimaryButton } from "../shared/buttons.styled";
-import mypic from "@/assests/mypic.jpeg";
+import mypic from "@/assests/paul.jpeg";
 import Image from "next/image";
 
 // Define outside component so they're stable across renders

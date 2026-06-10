@@ -284,7 +284,7 @@ const MainContent = styled.main`
   max-width: 80rem;
   margin: 0 auto;
   padding: 0 1rem;
-  
   padding-bottom: 6rem;
+  background: #ffffff;
 `;
 
