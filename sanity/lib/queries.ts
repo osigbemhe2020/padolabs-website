@@ -70,11 +70,7 @@ export const singleProjectQuery = groq`
         hotspot,
         alt,
       },
-      thumbnail {
-        asset-> { _id, url },
-        hotspot,
-        alt,
-      },
+      
     },
     screenshots[] {
       asset-> { _id, url },
@@ -86,6 +82,7 @@ export const singleProjectQuery = groq`
       intro,
       body,
       highlightQuote,
+      milestone,
     },
     goals {
       title,
@@ -97,6 +94,11 @@ export const singleProjectQuery = groq`
     challenges {
       title,
       intro,
+      ChallengeImage {
+        asset-> { _id, url },
+        hotspot,
+        alt,
+      },
       items[] {
         title,
         description,
@@ -108,6 +110,11 @@ export const singleProjectQuery = groq`
         step,
         title,
         description,
+        image {
+        asset-> { _id, url },
+        hotspot,
+        alt,
+      },
       },
     },
     technicalLearnings {
@@ -123,12 +130,12 @@ export const singleProjectQuery = groq`
       intro,
       then {
         title,
-        points,
+        thenbody,
         image { asset-> { _id, url }, hotspot, alt },
       },
       now {
         title,
-        points,
+        nowbody,
         image { asset-> { _id, url }, hotspot, alt },
       },
       improvements,
@@ -151,8 +158,10 @@ export const singleProjectQuery = groq`
     engineeringDecisions {
       title,
       items[] {
-        decision,
-        reason,
+        title,
+        choice,
+        rejected,
+        rationale,
       },
     },
     retrospective {

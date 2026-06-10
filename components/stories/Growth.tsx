@@ -21,7 +21,7 @@ const Growth: React.FC<GrowthProps> = ({ timelineData }) => {
   return (
     <StorySection gradient="hsl">
       <ContentContainer>
-        <SectionHeader eyebrow="07" title="Where this project fits" />
+        <SectionHeader eyebrow="08" title="Where this project fits" />
 
         <TimelineContainer>
           <TimelineLine />

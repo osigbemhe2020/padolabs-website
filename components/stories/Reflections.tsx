@@ -9,65 +9,103 @@ import { StorySection } from '../shared/stories/StorySection';
 import { StoryCard } from '../shared/StoryCard.styled';
 import { Badge } from '../shared/Badge.styled';
 
-const Reflections: React.FC = () => {
-  const benefits = [
-    "Code became more declarative",
-    "Design decisions feel intentional",
-    "Reusability is now a default",
-  ];
+interface ReflectionProps {
+  reflection: {
+    title: string;
+    intro: string;
+    then: {
+      title: string;
+      thenbody: string;
+      image?: {
+        asset?: {
+          url?: string;
+        };
+      };
+    };
+    now: {
+      title: string;
+      nowbody: string;
+      image?: {
+        asset?: {
+          url?: string;
+        };
+      };
+    };
+    improvements?: string[];
+  };
+}
+
+const Reflections: React.FC<ReflectionProps> = ({ reflection }) => {
 
   return (
     <StorySection id="reflection" padding="compact">
       <ContentContainer>
-        <SectionHeader eyebrow="06" title="Then vs. Now" />
+        <SectionHeader eyebrow="07" title="Then vs. Now" />
+        <p>
+          {reflection.intro}
+        </p>
 
         <ComparisonGrid>
           <StoryCard $variant="comparisonThen">
             <Badge $variant="then">Then</Badge>
-            <CardTitle>Pixel-pushing mode</CardTitle>
+            <CardTitle>{reflection.then.title}</CardTitle>
             <CardDescription>
-              I wrote CSS reactively — fixing what looked broken without a
-              system. Layouts were rigid and hard to evolve.
+             {reflection.then.thenbody}
             </CardDescription>
             <MockupContainer>
-              <MockupBar $width="100%" $variant="muted" />
-              <MockupBar $width="75%" $variant="muted" />
-              <MockupBox style={{ background: 'hsl(var(--muted) / 0.7)' }} />
+              {/* <MockupBar $width="100%" $variant="muted" />
+              <MockupBar $width="75%" $variant="muted" /> */}
+              {reflection.then.image?.asset?.url ? (
+                <MockupImage
+                  src={reflection.then.image.asset.url}
+                  alt={`${reflection.then.title} illustration`}
+                />
+              ) : (
+                <MockupBox style={{ background: 'hsl(var(--muted) / 0.7)' }} />
+              )}
             </MockupContainer>
           </StoryCard>
 
           <StoryCard $variant="comparisonNow">
             <Badge $variant="now">Now</Badge>
-            <CardTitle>Systems-first thinking</CardTitle>
+            <CardTitle>{reflection.now.title}</CardTitle>
             <CardDescription>
-              I design with tokens, components, and constraints. Every
-              decision is intentional and reusable.
+              {reflection.now.nowbody}
             </CardDescription>
             <MockupContainer>
-              <MockupBar $width="100%" $variant="primary" $opacity={0.9} />
-              <MockupBar $width="66.67%" $variant="primary" $opacity={0.4} />
-              <MockupBox
-                style={{
-                  background: 'hsl(var(--primary) / 0.2)',
-                  border: '1px solid hsl(var(--primary) / 0.3)',
-                }}
-              />
+              {/* <MockupBar $width="100%" $variant="primary" $opacity={0.9} />
+              <MockupBar $width="66.67%" $variant="primary" $opacity={0.4} /> */}
+              {reflection.now.image?.asset?.url ? (
+                <MockupImage
+                  src={reflection.now.image.asset.url}
+                  alt={`${reflection.now.title} illustration`}
+                />
+              ) : (
+                <MockupBox
+                  style={{
+                    background: 'hsl(var(--primary) / 0.2)',
+                    border: '1px solid hsl(var(--primary) / 0.3)',
+                  }}
+                />
+              )}
             </MockupContainer>
           </StoryCard>
         </ComparisonGrid>
 
+        <CardTitle>Areas for improvement</CardTitle>
+
         <BenefitsGrid>
-          {benefits.map((benefit) => (
-            <StoryCard key={benefit} $variant="benefit">
+          {reflection.improvements?.map((i) => (
+            <StoryCard key={i} $variant="benefit">
               <CheckCircle2
                 style={{
-                  color: 'hsl(var(--primary))',
+                  color: 'purple',
                   flexShrink: 0,
                   marginTop: '0.125rem',
                 }}
                 size={18}
               />
-              <BenefitText>{benefit}</BenefitText>
+              <BenefitText>{i}</BenefitText>
             </StoryCard>
           ))}
         </BenefitsGrid>
@@ -83,6 +121,7 @@ const ComparisonGrid = styled.div`
   grid-template-columns: 1fr;
   gap: 1.5rem;
   margin-top: 3rem;
+  margin-bottom: 3rem;
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
@@ -137,6 +176,13 @@ const MockupBox = styled.div`
   height: 5rem;
   width: 100%;
   border-radius: 0.5rem;
+`;
+
+const MockupImage = styled.img`
+  height: 10rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  object-fit: cover;
 `;
 
 const BenefitsGrid = styled.div`

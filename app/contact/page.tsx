@@ -124,15 +124,13 @@ const Contact = () => {
         </ContentWrapper>
       </Section>
 
-      <Section>
-        <ContentWrapper>
+      
           <CTASection
             title="Have an idea worth building?"
             description="Let's turn it into a real-world digital experience."
             buttonText="Start a Project"
           />
-        </ContentWrapper>
-      </Section>
+        
 
       <Footer />
       <ToastContainer

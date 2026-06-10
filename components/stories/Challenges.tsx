@@ -16,12 +16,17 @@ interface ChallengesProps {
     title: string;
     intro: string;
     items: Challenge[];
-    imageUrl?: string;
+    ChallengeImage?: {
+      asset: {
+        url: string;
+      };
+    };
   };
 }
 
 const Challenges = ({ challenges }: ChallengesProps) => {
   const challengesArray = challenges.items;
+   
 
   return (
     <StorySection id="challenges">
@@ -44,7 +49,7 @@ const Challenges = ({ challenges }: ChallengesProps) => {
               ))}
             </ChallengesContent>
             <ChallengeImage>
-              <img src={challenges.imageUrl} alt="Illustration representing challenges" />
+              <img src={challenges.ChallengeImage?.asset?.url} alt="Illustration representing challenges" />
             </ChallengeImage>
             </ChallengesGrid>
           </Content>

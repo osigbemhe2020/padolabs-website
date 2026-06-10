@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Image from 'next/image';
 import { SectionHeader } from '../shared/SectionHeader';
 import { ContentContainer } from '../shared/Layout.styled';
 import { StorySection } from '../shared/stories/StorySection';
@@ -9,7 +10,7 @@ interface ProcessStep {
   step: string;
   title: string;
   description: string;
-  image?: string;
+  image?: { asset?: { url?: string }; alt?: string } | string;
 }
 
 interface ProcessProps {
@@ -29,7 +30,27 @@ const Process = ({ process }: ProcessProps) => {
                   <StepNumber>{p.step}</StepNumber>
                   <IconPlaceholder>
                     <IconLines>
-                      <img src={p.image} alt={p.title} />
+                      {(
+                        typeof p.image === "string"
+                          ? p.image
+                          : p.image?.asset?.url
+                      ) && (
+                        <Image
+                          src={
+                            typeof p.image === "string"
+                              ? p.image
+                              : p.image!.asset!.url!
+                          }
+                          alt={
+                            typeof p.image === "string"
+                              ? p.title
+                              : p.image?.alt ?? p.title
+                          }
+                          fill
+                          style={{ objectFit: 'contain' }}
+                          
+                        />
+                      )}
                     </IconLines>
                   </IconPlaceholder>
                   <CardTitle>{p.title}</CardTitle>
@@ -81,7 +102,7 @@ const ProcessCard = styled.div`
   > div {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 92%;
   }
 
   @media (min-width: 768px) {
@@ -110,13 +131,14 @@ const StepNumber = styled(MonoLabel)`
 `;
 
 const IconPlaceholder = styled.div`
-  height: 5rem;
+  height: 7rem;
   border-radius: 0.5rem;
   background: hsl(var(--accent) / 0.6);
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 `;
 
 const IconLines = styled.div`
@@ -125,10 +147,11 @@ const IconLines = styled.div`
   justify-content: center;
   width: 100%;
   height: 100%;
+  position: relative;
 
   img {
     max-height: 100%;
-    width: 90%;
+    width: 100%;
     
   }
 `;
