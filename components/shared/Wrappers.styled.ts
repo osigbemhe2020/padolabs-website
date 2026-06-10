@@ -149,6 +149,8 @@ export const StoriesGrid = styled.div`
 export const ProjectGrid = styled.div`
   display: grid;
   gap: 1.5rem;
+  justify-items: center;
+  margin: 0 auto;
 
   @media (min-width: 640px) {
     grid-template-columns: repeat(2, 1fr);
