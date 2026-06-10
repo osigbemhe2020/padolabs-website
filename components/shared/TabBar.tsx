@@ -65,7 +65,7 @@ export default SimpleTabBar;
 
 const Wrapper = styled.div`
   width: 100%;
-  
+  background: #ffffff;
 `;
 
 const TabButtonRow = styled.div`

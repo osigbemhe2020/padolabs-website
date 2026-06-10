@@ -7,6 +7,7 @@ export const CTAButton = styled.button`
   border: none;
   border-radius: 0.5rem;
   padding: 0.75rem 1.5rem;
+  text-decoration: none;
   margin: 2rem auto;
   font-size: 1.125rem;
   font-weight: 600;
@@ -15,6 +16,11 @@ export const CTAButton = styled.button`
   align-items: center;
   transition: background-color 0.2s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  
+  .text{
+    margin-left: 0.5rem;
+    text-decoration: none;
+    }
 
   &:hover {
     background: rgba(255, 255, 255, 0.9);

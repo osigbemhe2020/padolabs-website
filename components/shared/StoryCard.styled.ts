@@ -11,8 +11,8 @@ export type StoryCardVariant =
 const variantStyles: Record<StoryCardVariant, ReturnType<typeof css>> = {
   interactive: css`
     border-radius: 1rem;
-    border: 1px solid rgba(var(--border), 1);
-    background: rgba(var(--card), 1);
+    border: 1px solid hsl(var(--border));
+    background: hsl(var(--card));
     padding: 1.5rem;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     transition: all 0.3s ease;

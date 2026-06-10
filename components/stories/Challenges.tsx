@@ -136,7 +136,7 @@ const ChallengeHeader = styled.div`
 
 const ChallengeNumber = styled(MonoLabel)`
   font-size: 1.25rem;
-  color: rgba(var(--primary-foreground), 0.6);
+  color: hsl(var(--primary-foreground) / 0.6);
 `;
 
 const ChallengeText = styled.p`

@@ -61,12 +61,12 @@ const GoalsGrid = styled.div`
 
 const GoalTitle = styled.h3`
   font-weight: 600;
-  color: rgba(var(--foreground), 1);
+  color: hsl(var(--foreground));
   margin-bottom: 0.5rem;
 `;
 
 const GoalDescription = styled.p`
   font-size: 0.875rem;
-  color: rgba(var(--muted-foreground), 1);
+  color: hsl(var(--muted-foreground));
   line-height: 1.6;
 `;

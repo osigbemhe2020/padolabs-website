@@ -3,6 +3,8 @@ import styled from 'styled-components'
 
 export const PageWrapper = styled.div`
   min-height: 100vh;
+  background: #ffffff;
+  color: #171717;
 `;
 export const Container = styled.section<{ $backgroundColor?: string }>`
   padding: 3rem 1.25rem;
@@ -125,6 +127,7 @@ export const Header = styled.div`
 export const PageHeader = styled.header`
   padding: 1rem 0;
   text-align: center;
+  background: #ffffff;
 `;
 
 // Grid Components for Cards
