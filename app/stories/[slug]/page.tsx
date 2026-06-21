@@ -25,6 +25,7 @@ import {
   nextProjectQuery,
   prevProjectQuery,
 } from "@/sanity/lib/queries";
+import KeyDecisions from "@/components/stories/KeyDecisions";
 
 // ── Static params ─────────────────────────────────────────────────────────────
 export async function generateStaticParams() {
@@ -93,9 +94,6 @@ const ProjectStory = async ({ params }: { params: { slug: string } }) => {
 
   if (!project) return <NotFound />;
 
-  console.log("project reflections data:", project.reflection);
-
-
 
   let nextProject = await client.fetch(nextProjectQuery, {
     createdAt: project._createdAt,
@@ -134,7 +132,7 @@ const ProjectStory = async ({ params }: { params: { slug: string } }) => {
     body: contextBody,
   };
 
-   console.log("Project data:", project);
+   const isdecisionsAvailable = project.engineeringDecisions?.items?.length > 0;
 
   return (
     <PageWrapper>
@@ -207,15 +205,10 @@ const ProjectStory = async ({ params }: { params: { slug: string } }) => {
       {project.goals?.items?.length > 0 && (
         <Goals num="02" goals={project.goals} />
       )}
-
+   
       {/* Features */}
       {project.features?.items?.length > 0 && (
         <Goals num="03" goals={project.features} />
-      )}
-
-      {/* Challenges */}
-      {project.challenges?.items?.length > 0 && (
-        <Challenges challenges={project.challenges} />
       )}
 
       {/* Process */}
@@ -223,20 +216,32 @@ const ProjectStory = async ({ params }: { params: { slug: string } }) => {
         <Process process={project.process.steps} />
       )}
 
+         {/* Key Decisions */}
+      {project.engineeringDecisions  && (
+      <KeyDecisions decisions={project.engineeringDecisions.items} />
+     )}
+
+      {/* Challenges */}
+      {project.challenges?.items?.length > 0 && (
+        <Challenges challenges={project.challenges} isdecisionsAvailable={isdecisionsAvailable} />
+      )}
+
+      
+
       {/* Learnings */}
       {project.technicalLearnings?.items?.length > 0 && (
-        <Learnings learnings={project.technicalLearnings.items} />
+        <Learnings learnings={project.technicalLearnings.items} isdecisionsAvailable={isdecisionsAvailable}/>
       )}
 
       
 
       {/* Reflections */}
       {project.reflection && (
-        <Reflections reflection={project.reflection} />
+        <Reflections reflection={project.reflection} isdecisionsAvailable={isdecisionsAvailable} />
       )}
       {/* Growth */}
             {project.growth?.milestones?.length > 0 && (
-              <Growth timelineData={project.growth.milestones} />
+              <Growth timelineData={project.growth.milestones} isdecisionsAvailable={isdecisionsAvailable} />
             )}
 
       <Border />

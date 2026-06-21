@@ -83,6 +83,7 @@ interface LearningItem {
 
 interface LearningsProps {
   learnings: LearningItem[];
+  isdecisionsAvailable: boolean;
 }
 
 const AccordionItemComponent: React.FC<{ item: LearningItem; index: number }> = ({
@@ -110,12 +111,12 @@ const AccordionItemComponent: React.FC<{ item: LearningItem; index: number }> = 
   );
 };
 
-const Learnings: React.FC<LearningsProps> = ({ learnings }) => {
+const Learnings: React.FC<LearningsProps> = ({ learnings, isdecisionsAvailable }) => {
   return (
     <StorySection id="learnings" gradient="lightpurple">
       
       <ContentContainer>
-        <SectionHeader eyebrow="06" title="Technical takeaways" />
+        <SectionHeader eyebrow={isdecisionsAvailable ? "07" : "06"} title="Technical takeaways" />
         <AccordionContainer>
           {learnings.map((learning, index) => (
             <AccordionItemComponent

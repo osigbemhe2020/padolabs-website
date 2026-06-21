@@ -1,12 +1,10 @@
+//KeyDecisions.tsx
 import styled from 'styled-components';
-import { Boxes } from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
 import { SectionHeader } from '../shared/SectionHeader';
 import { ContentContainer } from '../shared/Layout.styled';
 import { MonoLabel } from '../shared/Text.styled';
 
 export interface KeyDecision {
-  icon?: LucideIcon;
   title: string;
   choice: string;
   rejected: string;
@@ -39,12 +37,6 @@ const KeyDecisions = ({
             <DecisionCard key={decision.title}>
               <AccentStripe />
               <CardHeader>
-                <IconWrapper>
-                  {(() => {
-                    const Icon = decision.icon ?? Boxes;
-                    return <Icon size={20} />;
-                  })()}
-                </IconWrapper>
                 <HeaderContent>
                   <Label>
                     DECISION · 0{index + 1}
@@ -146,21 +138,7 @@ const CardHeader = styled.div`
   margin-bottom: 1.5rem;
 `;
 
-const IconWrapper = styled.div`
-  width: 2.75rem;
-  height: 2.75rem;
-  border-radius: 1rem;
-  display: grid;
-  place-items: center;
-  background: hsl(var(--primary) / 0.1);
-  color: hsl(var(--primary));
-  transition: background 0.3s ease, color 0.3s ease;
 
-  ${DecisionCard}:hover & {
-    background: hsl(var(--primary));
-    color: hsl(var(--primary-foreground));
-  }
-`;
 
 const HeaderContent = styled.div`
   display: grid;

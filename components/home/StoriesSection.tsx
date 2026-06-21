@@ -34,7 +34,7 @@ const StoriesSection = ({ projects }: { projects: Project[] }) => {
         </Header>
 
         <ProjectGrid>
-          {projects.slice(0, 4).map((p: Project) => (
+          {projects.slice(0, 3).map((p: Project) => (
             <motion.div
               key={p._id ?? p.slug ?? p.title}
               initial={{ opacity: 0, y: 40 }}

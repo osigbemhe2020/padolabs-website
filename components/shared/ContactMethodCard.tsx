@@ -4,7 +4,6 @@ import type { ElementType } from "react";
 interface ContactMethodCardProps {
   icon: ElementType;
   name: string;
-  handle: string;
   note: string;
   href: string;
 }
@@ -22,14 +21,13 @@ export const ContactMethodsGrid = styled.div`
   }
 `;
 
-export const ContactMethodCard = ({ icon: Icon, name, handle, note, href }: ContactMethodCardProps) => (
+export const ContactMethodCard = ({ icon: Icon, name, note, href }: ContactMethodCardProps) => (
   <ContactMethodLink href={href}>
     <ContactCard>
       <MethodIcon>
         <Icon size={20} />
       </MethodIcon>
       <MethodName>{name}</MethodName>
-      <MethodHandle>{handle}</MethodHandle>
       <MethodNote>{note}</MethodNote>
     </ContactCard>
   </ContactMethodLink>
@@ -47,8 +45,11 @@ const ContactCard = styled.div`
   border: 1px solid rgba(226, 232, 240, 0.9);
   box-shadow: 0 18px 45px rgba(15, 23, 42, 0.05);
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-  display: grid;
-  gap: 1rem;
+  gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   &:hover {
     transform: translateY(-0.25rem);

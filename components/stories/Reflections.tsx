@@ -33,14 +33,15 @@ interface ReflectionProps {
     };
     improvements?: string[];
   };
+  isdecisionsAvailable: boolean;
 }
 
-const Reflections: React.FC<ReflectionProps> = ({ reflection }) => {
+const Reflections: React.FC<ReflectionProps> = ({ reflection,isdecisionsAvailable }) => {
 
   return (
     <StorySection id="reflection" padding="compact">
       <ContentContainer>
-        <SectionHeader eyebrow="07" title="Then vs. Now" />
+        <SectionHeader eyebrow={isdecisionsAvailable ? "08" : "07"} title="Then vs. Now" />
         <p>
           {reflection.intro}
         </p>
@@ -148,29 +149,29 @@ const MockupContainer = styled.div`
   gap: 0.5rem;
 `;
 
-const MockupBar = styled.div<{
-  $width?: string;
-  $opacity?: number;
-  $variant?: 'muted' | 'primary';
-}>`
-  height: 0.75rem;
-  border-radius: 9999px;
+// const MockupBar = styled.div<{
+//   $width?: string;
+//   $opacity?: number;
+//   $variant?: 'muted' | 'primary';
+// }>`
+//   height: 0.75rem;
+//   border-radius: 9999px;
 
-  ${({ $width }) => $width && `width: ${$width};`}
-  ${({ $opacity }) => $opacity && `opacity: ${$opacity};`}
+//   ${({ $width }) => $width && `width: ${$width};`}
+//   ${({ $opacity }) => $opacity && `opacity: ${$opacity};`}
 
-  ${({ $variant }) =>
-    $variant === 'primary' &&
-    `
-    background: hsl(var(--primary));
-  `}
+//   ${({ $variant }) =>
+//     $variant === 'primary' &&
+//     `
+//     background: hsl(var(--primary));
+//   `}
 
-  ${({ $variant }) =>
-    $variant === 'muted' &&
-    `
-    background: hsl(var(--muted));
-  `}
-`;
+//   ${({ $variant }) =>
+//     $variant === 'muted' &&
+//     `
+//     background: hsl(var(--muted));
+//   `}
+// `;
 
 const MockupBox = styled.div`
   height: 5rem;

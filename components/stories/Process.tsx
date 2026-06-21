@@ -21,7 +21,7 @@ const Process = ({ process }: ProcessProps) => {
   return (
     <StorySection id="process" gradient="lightpurple" padding="compact">
       <ContentContainer>
-        <SectionHeader eyebrow="05" title="Development Process" />
+        <SectionHeader eyebrow="04" title="Development Process" />
         <ProcessGrid>
           <Grid>
             {process.map((p, index) => (

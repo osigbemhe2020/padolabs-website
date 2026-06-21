@@ -24,7 +24,7 @@ interface ChallengesProps {
   };
 }
 
-const Challenges = ({ challenges }: ChallengesProps) => {
+const Challenges = ({ challenges,isdecisionsAvailable }: ChallengesProps & { isdecisionsAvailable: boolean }) => {
   const challengesArray = challenges.items;
    
 
@@ -34,7 +34,7 @@ const Challenges = ({ challenges }: ChallengesProps) => {
         <ChallengesCard>
           <DotPattern />
           <Content>
-            <SectionHeader eyebrow="04" title="What where my main challenges" />
+            <SectionHeader eyebrow={isdecisionsAvailable ? "06" : "05"} title="What where my main challenges" />
             <Description>{challenges.intro}</Description>
             <ChallengesGrid>
             <ChallengesContent>

@@ -24,9 +24,9 @@ const contactSchema = z.object({
 });
 
 const contactMethods = [
-  { icon: Mail, name: "Email", handle: "hello@padolabs.dev", note: "Best for project inquiries", href: "mailto:hello@padolabs.dev" },
-  { icon: Linkedin, name: "LinkedIn", handle: "/in/padolabs", note: "Let's connect professionally", href: "#" },
-  { icon: Github, name: "GitHub", handle: "@padolabs", note: "Explore my open source work", href: "#" },
+  { icon: Mail, name: "Email", handle: "hello@padolabs.dev", note: "Best for project inquiries", href: "mailto:dirisupaul16@gmail.com" },
+  { icon: Linkedin, name: "LinkedIn", handle: "/in/padolabs", note: "Let's connect professionally", href: "https://www.linkedin.com/in/paul-dirisu-61303019a/" },
+  { icon: Github, name: "GitHub", handle: "@padolabs", note: "Explore my open source work", href: "https://github.com/osigbemhe2020" },
   { icon: Twitter, name: "Twitter / X", handle: "@padolabs", note: "Thoughts on dev & design", href: "#" },
 ];
 
@@ -102,7 +102,7 @@ const Contact = () => {
         </ContentWrapper>
       </Section>
 
-      {/* <Section $backgroundColor="#eef2ff">
+       <Section $backgroundColor="#eef2ff">
         <ContentWrapper>
           <CenterHeader>
             <SectionTitle>Or reach me directly</SectionTitle>
@@ -110,19 +110,18 @@ const Contact = () => {
           </CenterHeader>
 
           <ContactMethodsGrid>
-            {contactMethods.map(({ icon, name, handle, note, href }) => (
+            {contactMethods.map(({ icon, name, note, href }) => (
               <ContactMethodCard
                 key={name}
                 icon={icon}
                 name={name}
-                handle={handle}
                 note={note}
                 href={href}
               />
             ))}
           </ContactMethodsGrid> 
         </ContentWrapper>
-      </Section> */}
+      </Section> 
 
      
           <CTASection

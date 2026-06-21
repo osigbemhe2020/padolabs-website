@@ -15,13 +15,14 @@ interface TimelineItem {
 
 interface GrowthProps {
   timelineData: TimelineItem[];
+  isdecisionsAvailable: boolean;
 }
 
-const Growth: React.FC<GrowthProps> = ({ timelineData }) => {
+const Growth: React.FC<GrowthProps> = ({ timelineData, isdecisionsAvailable }) => {
   return (
     <StorySection gradient="hsl">
       <ContentContainer>
-        <SectionHeader eyebrow="08" title="Where this project fits" />
+        <SectionHeader eyebrow={isdecisionsAvailable ? "08" : "07"} title="Where this project fits" />
 
         <TimelineContainer>
           <TimelineLine />
