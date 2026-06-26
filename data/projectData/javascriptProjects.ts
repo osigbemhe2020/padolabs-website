@@ -43,7 +43,7 @@ export const javascriptProjects: Project[] = [
       timeline: "January - March 2025",
       projectType: "Learning Project",
       origin: "freeCodeCamp JavaScript Algorithms & Data Structures Certification",
-      liveUrl: " https://osigbemhe2020.github.io/javascript_projects/",
+      liveUrl: " https://osigbemhe2020.github.io/javascript_projects",
       githubUrl: "https://github.com/osigbemhe2020/javascript_projects.git",
     },
 
@@ -307,11 +307,11 @@ export const javascriptProjects: Project[] = [
       buttons: [
         {
           label: "Live Demo",
-          url: "",
+          url: "https://osigbemhe2020.github.io/javascript_projects",
         },
         {
           label: "View Source Code",
-          url: "",
+          url: "https://github.com/osigbemhe2020/javascript_projects.git",
         },
       ],
     },

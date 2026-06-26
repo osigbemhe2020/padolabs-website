@@ -1,6 +1,6 @@
 import { Project } from "../project";
 
-export const javascriptProjects: Project[] = [
+export const clientDashboardProjects: Project[] = [
 {
   slug: {
     current: "konnectu-client-dashboard",
@@ -50,8 +50,8 @@ export const javascriptProjects: Project[] = [
     timeline: "May 2025",
     projectType: "Frontend Assessment Project",
     origin: "Belsoft Systems Limited Internship Assessment",
-    liveUrl: "https://nextapp-omega-ochre.vercel.app/",
-    githubUrl: "",
+    liveUrl: "https://konnectu-next-app.vercel.app",
+    githubUrl: "https://github.com/osigbemhe2020/konnectu-next-app.git",
   },
 
   context: {
@@ -332,7 +332,11 @@ export const javascriptProjects: Project[] = [
     buttons: [
       {
         label: "Live Demo",
-        url: "https://nextapp-omega-ochre.vercel.app/"
+        url: "https://konnectu-next-app.vercel.app"
+      },
+      {
+        label: "GitHub Repository",
+        url: "https://github.com/osigbemhe2020/konnectu-next-app.git"
       }
     ]
   }
