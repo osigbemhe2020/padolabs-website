@@ -63,7 +63,7 @@ const AboutSection = () => {
                 <NormalText>
                   I approach every project as a learning process—solving problems, refining ideas, and documenting the journey along the way.
                 </NormalText>
-                <a href="/Paul_Dirisu_CV.pdf" download="Paul_Dirisu_Resume.pdf">
+                <a href="/Paul_Dirisu_Resume.pdf" download="Paul_Dirisu_Resume.pdf">
                   <PrimaryButton style={{ width: 'fit-content' ,margin: '1rem auto' }}>
                     Download CV
                   </PrimaryButton>
