@@ -15,6 +15,7 @@ import Link from "next/link";
 import { client } from "@/sanity/lib/client";
 import { allProjectsQuery } from "@/sanity/lib/queries";
 import type { Project } from "@/lib/projects";
+//import TutorialsSection from "@/components/home/TutorialsSection";
 
 export default async function HomePage() {
   // ── Fetch on the server — no CORS, no useEffect ───────────────────────────
@@ -63,6 +64,7 @@ export default async function HomePage() {
         <AboutSection />
         <SkillsSection />
         <StoriesSection projects={sanityWebRecent} />
+        {/* <TutorialsSection /> */}
         <CTASection
           title="Let's turn ideas into real-world systems."
           description="Whether it's a web app, an IoT solution, or a technical challenge—I'd love to work with you."

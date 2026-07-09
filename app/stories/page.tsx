@@ -9,7 +9,7 @@ import {
   type Project,
 } from "@/lib/projects";
 
-import { ProjectCard, ProjectGrid } from "@/components/shared/Cards";
+import ProjectCarousel from "@/components/shared/ProjectCarousel";
 import { TitleText, GradientText, NormalText } from "@/components/shared/Text.styled";
 import { PageHeader, PageWrapper } from "@/components/shared/Wrappers.styled";
 import { client } from "@/sanity/lib/client";
@@ -34,16 +34,12 @@ const ProjectGroup = ({
   projects: Project[];
   isRecent?: boolean;
 }) => (
-  <ProjectGroupContainer>
+    <ProjectGroupContainer>
     <ProjectGroupHeader>
       <ProjectGroupLabel $isRecent={isRecent}>{label}</ProjectGroupLabel>
       <ProjectGroupDescription>{description}</ProjectGroupDescription>
     </ProjectGroupHeader>
-    <ProjectGrid>
-      {projects.slice(0, 3).map((p) => (
-        <ProjectCard key={p._id ?? p.meta?.title} project={p} />
-      ))}
-    </ProjectGrid>
+    <ProjectCarousel projects={projects} />
   </ProjectGroupContainer>
 );
 

@@ -34,20 +34,20 @@ const ContentWrapper = styled.div`
   max-width: 800px;
 `
 
-const Title = styled.h1`
-  color: white;
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 700;
-  margin-bottom: 1rem;
-  text-shadow: 0 4px 20px rgba(0,0,0,0.3);
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 0.8s ease-out forwards;
+// const Title = styled.h1`
+//   color: white;
+//   font-size: clamp(2rem, 5vw, 3.5rem);
+//   font-weight: 700;
+//   margin-bottom: 1rem;
+//   text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+//   opacity: 0;
+//   transform: translateY(30px);
+//   animation: fadeInUp 0.8s ease-out forwards;
   
-  @media (max-width: 768px) {
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
-  }
-`
+//   @media (max-width: 768px) {
+//     font-size: clamp(1.5rem, 4vw, 2.5rem);
+//   }
+// `
 
 const Subtitle = styled.div`
   color: rgba(255, 255, 255, 0.9);
@@ -90,15 +90,15 @@ const TypingText = styled.span`
   }
 `
 
-const Cursor = styled.span`
-  display: inline-block;
-  width: 3px;
-  height: 1.2em;
-  background: white;
-  margin-left: 2px;
-  animation: blink 1s infinite;
-  vertical-align: text-bottom;
-`
+// const Cursor = styled.span`
+//   display: inline-block;
+//   width: 3px;
+//   height: 1.2em;
+//   background: white;
+//   margin-left: 2px;
+//   animation: blink 1s infinite;
+//   vertical-align: text-bottom;
+// `
 
 const ProgressBar = styled.div`
   width: 100%;
