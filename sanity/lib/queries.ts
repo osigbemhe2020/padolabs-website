@@ -40,6 +40,7 @@ export const singleProjectQuery = groq`
   *[_type == "project" && slug.current == $slug][0] {
     _id,
     _createdAt,
+    order,
     "slug": slug.current,
     category-> {
       _id,
@@ -187,14 +188,14 @@ export const allProjectSlugsQuery = groq`
 `;
 
 export const nextProjectQuery = groq`
-  *[_type == "project" && _createdAt > $createdAt] | order(_createdAt asc)[0] {
+  *[_type == "project" && order > $order] | order(order asc, _createdAt asc)[0] {
     "slug": slug.current,
     hero { title, description },
   }
 `;
 
 export const prevProjectQuery = groq`
-  *[_type == "project" && _createdAt < $createdAt] | order(_createdAt desc)[0] {
+  *[_type == "project" && order < $order] | order(order desc, _createdAt desc)[0] {
     "slug": slug.current,
     hero { title, description },
   }

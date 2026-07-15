@@ -96,13 +96,13 @@ const ProjectStory = async ({ params }: { params: { slug: string } }) => {
 
 
   let nextProject = await client.fetch(nextProjectQuery, {
-    createdAt: project._createdAt,
+    order: project.order ?? 0,
   });
 
   // Wrap around: if no newer project, fetch the oldest one
   if (!nextProject) {
     nextProject = await client.fetch(
-      groq`*[_type == "project"] | order(_createdAt asc)[0] {
+      groq`*[_type == "project"] | order(order asc, _createdAt asc)[0] {
         "slug": slug.current,
         hero { title, description },
       }`
@@ -110,13 +110,13 @@ const ProjectStory = async ({ params }: { params: { slug: string } }) => {
   }
 
   let prevProject = await client.fetch(prevProjectQuery, {
-    createdAt: project._createdAt,
+    order: project.order ?? 0,
   });
 
   // Wrap around: if no older project, fetch the newest one
   if (!prevProject) {
     prevProject = await client.fetch(
-      groq`*[_type == "project"] | order(_createdAt desc)[0] {
+      groq`*[_type == "project"] | order(order desc, _createdAt desc)[0] {
         "slug": slug.current,
         hero { title, description },
       }`
