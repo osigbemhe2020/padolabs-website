@@ -13,7 +13,7 @@ const StoriesSection = ({ projects }: { projects: Project[] }) => {
             Stories Behind <GradientText>My Work</GradientText>
           </TitleText>
           <NormalText>
-            Every project has a story—of challenges, breakthroughs, and real-world impact.
+            Every project has a story, shaped by challenges, breakthroughs, and real-world impact.
           </NormalText>
         </Header>
 

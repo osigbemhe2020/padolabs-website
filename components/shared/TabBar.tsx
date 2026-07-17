@@ -43,7 +43,7 @@ const SimpleTabBar: React.FC<SimpleTabBarProps> = ({ tabs }) => {
           All tab panels sit side-by-side in a single flex row.
           The outer div is overflow:hidden so only one panel shows at a time.
           We slide the inner row left by (activeIndex * 100%) to bring the
-          correct panel into view — this is the core trick from the codebase. */}
+          correct panel into view; this is the core trick from the codebase. */}
       <PanelOuter>
         <PanelInner $activeIndex={activeIndex} $totalTabs={tabs.length}>
           {tabs.map((tab) => (
@@ -122,7 +122,7 @@ const Divider = styled.div`
 `;
 
 /* PanelOuter clips everything outside the visible area.
-   overflow:hidden is the key — without it you'd see all panels at once. */
+   overflow:hidden is the key; without it, you'd see all panels at once. */
 const PanelOuter = styled.div`
   overflow: hidden;
   width: 100%;

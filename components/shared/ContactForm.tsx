@@ -67,12 +67,12 @@ export const ContactForm = ({ form, onChange, onSubmit, submitting }: ContactFor
         />
       </Field>
 
-      <PrimaryButton type="submit" disabled={submitting}>
+      <SubmitButton type="submit" disabled={submitting}>
         <ButtonIcon>
           <Send size={16} />
         </ButtonIcon>
         {submitting ? "Sending..." : "Send Message"}
-      </PrimaryButton>
+      </SubmitButton>
     </Form>
   </FormCard>
 );
@@ -147,9 +147,15 @@ const StyledTextarea = styled.textarea`
   }
 `;
 
+const SubmitButton = styled(PrimaryButton)`
+  width: fit-content;
+  min-width: 11rem;
+  margin-top: 0.25rem;
+  align-self: start;
+`;
+
 const ButtonIcon = styled.span`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-right: 0.75rem;
 `;

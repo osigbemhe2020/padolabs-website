@@ -122,7 +122,7 @@ const ProjectStory = async ({ params }: { params: { slug: string } }) => {
       }`
     );
   }
-  // context.body is string[] in Sanity — join for Context component
+  // context.body is a string array in Sanity, so join it for the Context component
   const contextBody = Array.isArray(project.context?.body)
     ? project.context.body.join("\n\n")
     : project.context?.body ?? "";

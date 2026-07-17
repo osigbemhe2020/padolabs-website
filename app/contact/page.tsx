@@ -86,7 +86,7 @@ const Contact = () => {
                 heroIcon={Mail}
                 infoIcon={Clock}
                 infoTitle="Quick response"
-                infoText="Typically responds within 24–48 hours."
+                infoText="Typically responds within 24 to 48 hours."
               />
             </LeftColumn>
 

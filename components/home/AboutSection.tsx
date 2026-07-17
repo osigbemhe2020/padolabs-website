@@ -36,7 +36,7 @@ const AboutSection = () => {
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
         >
-          {/* Photo — fades UP */}
+          {/* Photo fades up */}
             <motion.div variants={fadeUp}>
               <PhotoContainer>
                 <Image 
@@ -50,7 +50,7 @@ const AboutSection = () => {
               </PhotoContainer>
             </motion.div>
 
-            {/* Text content — fades DOWN */}
+            {/* Text content fades down */}
             <motion.div variants={fadeDown}>
               <Content>
                 <TitleText>
@@ -61,7 +61,7 @@ const AboutSection = () => {
                   My work spans from interactive web applications to low-level firmware, bridging the gap between software and hardware.
                 </NormalText>
                 <NormalText>
-                  I approach every project as a learning process—solving problems, refining ideas, and documenting the journey along the way.
+                  I approach every project as a learning process, solving problems, refining ideas, and documenting the journey along the way.
                 </NormalText>
                 <a href="/Paul_Dirisu_Resume.pdf" download="Paul_Dirisu_Resume.pdf">
                   <PrimaryButton style={{ width: 'fit-content' ,margin: '1rem auto' }}>

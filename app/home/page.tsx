@@ -18,7 +18,7 @@ import type { Project } from "@/lib/projects";
 //import TutorialsSection from "@/components/home/TutorialsSection";
 
 export default async function HomePage() {
-  // ── Fetch on the server — no CORS, no useEffect ───────────────────────────
+  // Fetch on the server with no CORS or useEffect needed.
   const sanityProjects = await client.fetch(allProjectsQuery);
 
   const sanityWebRecent = sanityProjects.filter(
@@ -33,15 +33,15 @@ export default async function HomePage() {
           badge="Fullstack Developer"
           title={
             <>
-              PadoLabs — <GradientText>Building Ideas into</GradientText> Real-World Systems
+              PadoLabs <GradientText>building ideas into</GradientText> real-world systems
             </>
           }
           description={
             <>
-              I&apos;m Dirisu Paul — a fullstack developer building and documenting
-              web applications built by me and my journey as a developer.
+              I&apos;m Dirisu Paul, a fullstack developer building and documenting
+              web applications while sharing the lessons from my journey.
               <br />
-              This is more than a portfolio — it&apos;s a lab for experimentation,
+              This is more than a portfolio; it is a lab for experimentation,
               growth, and innovation.
             </>
           }
@@ -67,7 +67,7 @@ export default async function HomePage() {
         {/* <TutorialsSection /> */}
         <CTASection
           title="Let's turn ideas into real-world systems."
-          description="Whether it's a web app, an IoT solution, or a technical challenge—I'd love to work with you."
+          description="Whether it's a web app, an IoT solution, or a technical challenge, I'd love to work with you."
         />
         <Footer />
       </main>

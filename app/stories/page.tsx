@@ -69,7 +69,7 @@ const CategorySection = ({
 
     <ProjectGroup
       label="Early Stage"
-      description="Where journey began — foundational projects and first explorations"
+      description="Where the journey began, with foundational projects and early explorations"
       projects={earlyProjects}
     />
   </CategorySectionContainer>
@@ -80,12 +80,12 @@ const CategorySection = ({
 // const Stories = async () => {
 //   // Define the tabs array.
 //   // Each tab has:
-//   //   title   — the label shown on the tab button
-//   //   component — the JSX rendered in that tab's panel
+//   //   title: the label shown on the tab button
+//   //   component: the JSX rendered in that tab's panel
 //   //
-//   // We render CategorySection as JSX here (not a component class reference)
-//   // because SimpleTabBar accepts pre-rendered ReactNode, not component types.
-//   // This keeps SimpleTabBar simple — no need for generic props passing.
+//   // We render CategorySection as JSX here, not a component class reference,
+//   // because SimpleTabBar accepts pre-rendered ReactNode rather than component types.
+//   // This keeps SimpleTabBar simple and avoids extra prop plumbing.
 
 //   const sanityProjects = await client.fetch(allProjectsQuery);
 //     console.log('Sanity projects in stories page>>>>>', sanityProjects);
@@ -157,7 +157,7 @@ const Stories = async () => {
   const sanityProjects = await client.fetch(allProjectsQuery);
 
 
-  // Filter by category name — category has no slug field
+  // Filter by category name; the category has no slug field
  const sanityWebEarly = sanityProjects.filter(
   (p: Project) => p.category?.categorySlug === "web-early"  // ← was "early-web"
 );

@@ -20,7 +20,7 @@ export interface HeroSectionProps {
   image: StaticImageData | string;
   imageAlt: string;
 
-  // Optional — badge OR tags, not both
+  // Optional badge or tags, but not both
   badge?: string;
   badgeIcon?: React.ReactNode;
   tags?: string[];
@@ -124,7 +124,7 @@ export const HeroSectionNoImage = () => {
             Let&apos;s Build <GradientText>Something Real</GradientText>
           </HeroHeading>
           <HeroCopy>
-            Whether it&apos;s a web application, a product idea, or a technical challenge — I&apos;d love to hear about it.
+            Whether it&apos;s a web application, a product idea, or a technical challenge, I&apos;d love to hear about it.
           </HeroCopy>
           <HeroSubtext>
             Available for freelance, collaboration, and development opportunities.
@@ -222,7 +222,7 @@ const ButtonGroup = styled.div`
   padding-top: 0.5rem;
 `;
 
-// In HeroSection.tsx — update ImageWrapper and HeroImage
+// In HeroSection.tsx, update ImageWrapper and HeroImage
 
 const ImageWrapper = styled.div`
   position: relative;        /* required for fill mode */
