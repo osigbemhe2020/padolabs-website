@@ -2,13 +2,16 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import styled from "styled-components";
 
 const navLinks = [
   { label: "Home", href: "/home" },
   { label: "Stories", href: "/stories" },
-  //{ label: "Tutorials", href: "/tutorials" },
+  // { label: "Notes", href: "/notes" },
+  { label: "Work With Me", href: "/workWithMe" },
+  { label: "Booking", href: "/booking" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -25,10 +28,7 @@ const Navbar = () => {
         {/* Desktop */}
         <DesktopNav>
           {navLinks.map((link) => (
-            <NavLink
-              key={link.label}
-              href={link.href}
-            >
+            <NavLink key={link.label} href={link.href}>
               {link.label}
             </NavLink>
           ))}
@@ -49,6 +49,7 @@ const Navbar = () => {
           <MobileNavLink
             key={link.label}
             href={link.href}
+            onClick={() => setIsOpen(false)}
           >
             {link.label}
           </MobileNavLink>
@@ -84,7 +85,7 @@ const NavContainer = styled.div`
   padding: 0 1rem;
 `;
 
-const Logo = styled.a`
+const Logo = styled(Link)`
   font-size: 1.25rem;
   font-weight: 700;
   background: var(--gradient-primary);
@@ -104,7 +105,7 @@ const DesktopNav = styled.div`
   }
 `;
 
-const NavLink = styled.a`
+const NavLink = styled(Link)`
   font-size: 0.875rem;
   font-weight: 500;
   color: #6b7280;
@@ -173,7 +174,7 @@ const MobileMenu = styled.div`
   }
 `;
 
-const MobileNavLink = styled.a`
+const MobileNavLink = styled(Link)`
   display: block;
   padding: 0.5rem 0;
   font-size: 0.875rem;
