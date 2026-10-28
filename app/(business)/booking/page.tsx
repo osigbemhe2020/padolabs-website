@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import Navbar from "@/components/layout/NavBar";
 import Footer from "@/components/layout/Footer";
 import styled from "styled-components";
 import { ToastContainer, toast } from "react-toastify";
@@ -194,9 +193,8 @@ const Booking = () => {
   };
 
   return (
-    <PageWrapper>
+    <main>
       <ToastContainer position="top-right" autoClose={4000} />
-      <Navbar />
 
       {/* Hero Section */}
       <HeroContainer>
@@ -608,7 +606,7 @@ const Booking = () => {
       </form>
 
       <Footer />
-    </PageWrapper>
+    </main>
   );
 };
 

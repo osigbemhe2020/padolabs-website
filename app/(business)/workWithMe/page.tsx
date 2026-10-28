@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Navbar from "@/components/layout/NavBar";
 import Footer from "@/components/layout/Footer";
 import CTASection from "@/components/home/CTASection";
 import ProjectCarousel from "@/components/shared/ProjectCarousel";
@@ -179,8 +178,7 @@ export default async function WorkWithMe() {
   );
 
   return (
-    <PageWrapper>
-      <Navbar />
+    
       <main>
         {/* Hero Section with Interactive Tech Card */}
         <HeroContainer>
@@ -422,7 +420,6 @@ export default async function WorkWithMe() {
 
         <Footer />
       </main>
-    </PageWrapper>
   );
 }
 

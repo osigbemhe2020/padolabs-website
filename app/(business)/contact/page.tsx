@@ -2,7 +2,6 @@
 
 import { useState, type FormEvent } from "react";
 import styled from "styled-components";
-import Navbar from "@/components/layout/NavBar";
 import Footer from "@/components/layout/Footer";
 import { HeroSectionNoImage } from "@/components/home/HeroSection";
 import { Description, Title } from "@/components/shared/Text.styled";
@@ -71,9 +70,7 @@ const Contact = () => {
   };
 
   return (
-    <PageWrapper>
-      <Navbar />
-
+    <main>
         <HeroSectionNoImage />
 
       <Section $backgroundColor="#f8fafc">
@@ -141,7 +138,7 @@ const Contact = () => {
         draggable
         theme="colored"
       />
-    </PageWrapper>
+    </main>
   );
 };
 

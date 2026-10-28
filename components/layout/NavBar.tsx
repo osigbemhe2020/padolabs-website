@@ -6,13 +6,12 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import styled from "styled-components";
 
+
 const navLinks = [
   { label: "Home", href: "/home" },
   { label: "Stories", href: "/stories" },
   // { label: "Notes", href: "/notes" },
-  { label: "Work With Me", href: "/workWithMe" },
-  { label: "Booking", href: "/booking" },
-  { label: "Contact", href: "/contact" },
+  
 ];
 
 const Navbar = () => {
@@ -32,9 +31,9 @@ const Navbar = () => {
               {link.label}
             </NavLink>
           ))}
-          {/* <HireButton>
+           <HireButton onClick={() => window.location.href = '/business-page'}>
             Business Page
-          </HireButton> */}
+          </HireButton> 
         </DesktopNav>
 
         {/* Mobile toggle */}
@@ -54,9 +53,9 @@ const Navbar = () => {
             {link.label}
           </MobileNavLink>
         ))}
-        {/* <MobileHireButton>
-           Business Page
-        </MobileHireButton> */}
+        <MobileHireButton onClick={() => window.location.href = '/business-page'}>
+          Business Page
+        </MobileHireButton> 
       </MobileMenu>
     </StyledNav>
   );
@@ -117,22 +116,22 @@ const NavLink = styled(Link)`
   }
 `;
 
-// const HireButton = styled.button`
-//   padding: 0.5rem 1rem;
-//   background: var(--gradient-primary);
-//   color: white;
-//   border: none;
-//   border-radius: 0.375rem;
-//   font-size: 0.875rem;
-//   font-weight: 500;
-//   cursor: pointer;
-//   transition: transform 0.2s ease, box-shadow 0.2s ease;
+const HireButton = styled.button`
+  padding: 0.5rem 1rem;
+  background: var(--gradient-primary);
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 
-//   &:hover {
-//     transform: translateY(-1px);
-//     box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
-//   }
-// `;
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  }
+`;
 
 const MobileToggle = styled.button`
   display: block;
@@ -188,7 +187,7 @@ const MobileNavLink = styled(Link)`
   }
 `;
 
-// const MobileHireButton = styled(HireButton)`
-//   margin-top: 0.5rem;
-//   width: 100%;
-// `;
+const MobileHireButton = styled(HireButton)`
+  margin-top: 0.5rem;
+  width: 100%;
+`;
