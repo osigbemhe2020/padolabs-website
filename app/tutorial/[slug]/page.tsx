@@ -40,7 +40,7 @@ export default function TutorialPage({ params }: TutorialPageProps) {
         <NotFoundContainer>
           <NotFoundContent>
             <NotFoundTitle>Course not found</NotFoundTitle>
-            <NotFoundDescription>The course you're looking for doesn't exist or was moved.</NotFoundDescription>
+            <NotFoundDescription>The course you&apos;re looking for doesn&apos;t exist or was moved.</NotFoundDescription>
             <Link href="/tutorial">
               <BackButton>
                 Browse all courses <ArrowRight size={16} className="ml-1" />
@@ -178,7 +178,7 @@ export default function TutorialPage({ params }: TutorialPageProps) {
             Resources <GradientText>included</GradientText>
           </TitleText>
           <NormalText>
-            Notes, cheatsheets and setup guides you'll keep for life.
+            Notes, cheatsheets and setup guides you&apos;ll keep for life.
           </NormalText>
         </SectionHeader>
 

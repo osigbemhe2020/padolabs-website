@@ -2,15 +2,12 @@ import styled from "styled-components";
 import { Container, Eyebrow, Section, SectionHead, SectionSub, SectionTitle } from "./shared";
 import { CodeIcon, GlobeIcon, PenToolIcon, PhoneIcon } from "./icons";
 import type { ReactNode } from "react";
+import { MessageSquare } from "lucide-react";
 
 type Service = { icon: ReactNode; title: string; description: string };
 
 const services: Service[] = [
-  {
-    icon: <GlobeIcon />,
-    title: "Websites",
-    description: "Modern, fast and scalable websites that showcase your brand and convert visitors.",
-  },
+ 
   {
     icon: <CodeIcon />,
     title: "Web Applications",
@@ -25,6 +22,11 @@ const services: Service[] = [
     icon: <PenToolIcon />,
     title: "Product Design & Strategy",
     description: "User-centred design and strategy to turn your ideas into products people love.",
+  },{
+    icon: <MessageSquare />,
+    title: "Technical Consulting",
+    description:
+      "Architecture design, tech stack selection, code reviews, and performance optimization for growing products.",
   },
 ];
 

@@ -7,6 +7,7 @@ import {
   ProcessRocketIcon,
   ProcessSearchIcon,
 } from "./icons";
+import { ShieldCheck } from "lucide-react";
 
 type Step = { number: string; icon: ReactNode; title: string; description: string };
 
@@ -34,6 +35,13 @@ const steps: Step[] = [
   },
   {
     number: "04",
+    icon: <ShieldCheck />,
+    title: "Testing & Polish",
+    description:
+      "Comprehensive testing across devices, performance audits, security checks, and final polish.",
+  },
+  {
+    number: "05",
     icon: <ProcessRocketIcon />,
     title: "Launch & Improve",
     description:
