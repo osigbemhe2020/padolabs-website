@@ -9,9 +9,10 @@ interface CTASectionProps {
   title: string;
   description: string;
   buttonText?: string;
+  buttonLink?: string;
 }
 
-const CTASection = ({ title, description, buttonText = "Get In Touch" }: CTASectionProps) => {
+const CTASection = ({ title, description, buttonText = "Get In Touch", buttonLink = "/contact" }: CTASectionProps) => {
   return (
     <Container >
       <ContentWrapper>
@@ -24,7 +25,7 @@ const CTASection = ({ title, description, buttonText = "Get In Touch" }: CTASect
               {description}
             </NormalText>
           </Description>
-          <Link href="/contact" style={{ textDecoration: "none" }}>
+          <Link href={buttonLink} style={{ textDecoration: "none" }}>
           <CTAButton>
             <Mail size={18} /> <span className="text">{buttonText}</span>
           </CTAButton>

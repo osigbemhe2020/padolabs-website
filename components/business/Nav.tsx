@@ -5,10 +5,9 @@ import styled from "styled-components";
 import { Container, Logo, PrimaryLink } from "./shared";
 
 const links = [
-  { label: "Home", href: "/business" },
+  { label: "Home", href: "/business-page" },
   { label: "Our Work", href: "#work" },
-  { label: "Process", href: "#process" },
-  { label: "About", href: "#about" },
+  { label: "Our Packages", href: "/packages" },
   { label: "Contact", href: "/contact" },
 ];
 

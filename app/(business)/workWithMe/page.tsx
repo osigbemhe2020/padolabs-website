@@ -599,7 +599,7 @@
 // `;
 
 // const TerminalHeader = styled.div`
-//   display: flex;
+//   display: flex
 //   align-items: center;
 //   gap: 0.35rem;
 //   margin-bottom: 0.65rem;
@@ -1036,3 +1036,13 @@
 //   line-height: 1.65;
 //   color: #6b7280;
 // `;
+
+// This page is currently not in use. Uncomment the code above to restore functionality.
+export default function WorkWithMe() {
+  return (
+    <div style={{ padding: "2rem", textAlign: "center" }}>
+      <h1>Work With Me</h1>
+      <p>This page is currently under construction.</p>
+    </div>
+  );
+}

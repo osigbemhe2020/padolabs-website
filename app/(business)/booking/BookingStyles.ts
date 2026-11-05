@@ -274,3 +274,20 @@ export const MutedText = styled.p`
   font-size: 0.85rem;
   line-height: 1.6;
 `;
+
+export const PackagesLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #7654d6;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 0.5rem;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #6240bd;
+    text-decoration: underline;
+  }
+`;

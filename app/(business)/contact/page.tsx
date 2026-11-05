@@ -4,6 +4,7 @@ import { useState, type FormEvent } from "react";
 import styled from "styled-components";
 import Footer from "@/components/layout/Footer";
 import { HeroSectionNoImage } from "@/components/home/HeroSection";
+import { GradientText } from "@/components/shared/Text.styled";
 import { Description, Title } from "@/components/shared/Text.styled";
 import { Container, PageWrapper,ContentWrapper } from "@/components/shared/Wrappers.styled";
 import { ContactForm } from "@/components/shared/ContactForm";
@@ -71,7 +72,16 @@ const Contact = () => {
 
   return (
     <main>
-        <HeroSectionNoImage />
+        <HeroSectionNoImage
+          badge="Reach out anytime"
+          heading={
+            <>
+              Let&apos;s <GradientText>Get in Touch</GradientText>
+            </>
+          }
+          copy="Have a question, feedback, or just want to say hello? I&apos;d love to hear from you."
+          subtext="Fill out the form below or reach out directly through any of my social channels."
+        />
 
       <Section $backgroundColor="#f8fafc">
         <ContentWrapper>
@@ -79,7 +89,7 @@ const Contact = () => {
             <LeftColumn>
               <ContactInfoPanel
                 title="Send a message"
-                description="Tell me about your project, your team, or the problem you&apos;re trying to solve. The more context you share, the better I can help shape a meaningful response."
+                description="Feel free to reach out for any questions, collaborations, or just to say hello. I'd love to hear from you."
                 heroIcon={Mail}
                 infoIcon={Clock}
                 infoTitle="Quick response"
@@ -125,6 +135,7 @@ const Contact = () => {
             title="Have an idea worth building?"
             description="Let's turn it into a real-world digital experience."
             buttonText="Start a Project"
+            buttonLink="/booking"
           />
         
 

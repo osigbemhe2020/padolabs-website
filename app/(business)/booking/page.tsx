@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
 import {
@@ -38,6 +38,7 @@ import {
   SecondaryButton,
   Notice,
   MutedText,
+  PackagesLink,
 } from "./BookingStyles";
 
 import {
@@ -119,7 +120,7 @@ const formatCurrency = (amount: number) =>
     maximumFractionDigits: 0,
   }).format(amount);
 
-export default function BookingPage() {
+function BookingForm() {
   const searchParams = useSearchParams();
 
   const [step, setStep] = useState(1);
@@ -424,6 +425,9 @@ export default function BookingPage() {
                       Select the package that best fits your needs. You can
                       also leave the decision to us.
                     </SectionDescription>
+                    <PackagesLink href="/packages">
+                      View detailed package information →
+                    </PackagesLink>
 
                     <SelectionGrid>
                       <SelectionCard
@@ -796,5 +800,13 @@ export default function BookingPage() {
         </ContentWrapper>
       </Container>
     </PageWrapper>
+  );
+}
+
+export default function BookingPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <BookingForm />
+    </Suspense>
   );
 }

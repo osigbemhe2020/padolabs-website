@@ -107,7 +107,19 @@ const HeroSection = ({
   );
 };
 
-export const HeroSectionNoImage = () => {
+export interface HeroSectionNoImageProps {
+  badge?: string;
+  heading: React.ReactNode;
+  copy: React.ReactNode;
+  subtext: React.ReactNode;
+}
+
+export const HeroSectionNoImage = ({
+  badge = "Open for new opportunities",
+  heading,
+  copy,
+  subtext,
+}: HeroSectionNoImageProps) => {
     return (
       <HeroContainer>
         <HeroBackground>
@@ -117,17 +129,17 @@ export const HeroSectionNoImage = () => {
 
         <HeroContentWrapper>
           <Badge>
-            <Sparkles size={14} /> Open for new opportunities
+            <Sparkles size={14} /> {badge}
           </Badge>
-          
+
           <HeroHeading>
-            Let&apos;s Build <GradientText>Something Real</GradientText>
+            {heading}
           </HeroHeading>
           <HeroCopy>
-            Whether it&apos;s a web application, a product idea, or a technical challenge, I&apos;d love to hear about it.
+            {copy}
           </HeroCopy>
           <HeroSubtext>
-            Available for freelance, collaboration, and development opportunities.
+            {subtext}
           </HeroSubtext>
         </HeroContentWrapper>
       </HeroContainer>
