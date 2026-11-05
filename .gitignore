@@ -43,4 +43,5 @@ next-env.d.ts
 #scripts
 /scripts
 
-/data
+/data/*
+!/data/services.ts

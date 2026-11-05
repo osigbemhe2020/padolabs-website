@@ -1,0 +1,226 @@
+import {
+  Globe,
+  LayoutDashboard,
+  ShoppingBag,
+  MessageSquare,
+  Sparkles,
+} from "lucide-react";
+
+export const services = [
+  {
+    id: "business-website",
+    label: "Business Website",
+    description: "A professional website for your business or personal brand.",
+    icon: Globe,
+  },
+  {
+    id: "web-app",
+    label: "Web Application",
+    description: "Dashboards, SaaS platforms, portals, and custom systems.",
+    icon: LayoutDashboard,
+  },
+  {
+    id: "ecommerce",
+    label: "E-commerce Store",
+    description: "An online store for selling products and managing orders.",
+    icon: ShoppingBag,
+  },
+  {
+    id: "consultation",
+    label: "Technical Consulting",
+    description: "Technical reviews, architecture advice, and project guidance.",
+    icon: MessageSquare,
+  },
+  {
+    id: "other",
+    label: "Custom Solution",
+    description: "Something different? Tell me what you have in mind.",
+    icon: Sparkles,
+  },
+];
+
+export const packages = [
+  {
+    id: "starter",
+    service: "business-website",
+    name: "Starter Website",
+    price: 180000,
+    priceLabel: "₦180,000",
+    description: "A clean, professional online presence without the cost of a fully custom build.",
+    timeline: "1–2 weeks",
+    popular: false,
+    features: [
+      "Up to 4 pages",
+      "Premium template customization",
+      "Mobile-responsive design",
+      "Contact section",
+      "Basic on-page SEO",
+      "Social media links",
+      "Client-provided content",
+      "2 revision rounds",
+    ],
+  },
+  {
+    id: "business",
+    service: "business-website",
+    name: "Business Website",
+    price: 350000,
+    priceLabel: "₦350,000",
+    description: "A custom-designed website built around your brand and business goals.",
+    timeline: "2–4 weeks",
+    popular: true,
+    features: [
+      "Up to 10 pages",
+      "Custom UI design and development",
+      "Mobile-responsive layouts",
+      "Contact and inquiry forms",
+      "Custom animations",
+      "Basic SEO setup",
+      "Social media integration",
+      "Client-provided content",
+      "3 revision rounds",
+    ],
+  },
+  {
+    id: "business-plus",
+    service: "business-website",
+    name: "Business Plus",
+    price: 650000,
+    priceLabel: "₦650,000",
+    description: "A dynamic business website with content management and more functionality.",
+    timeline: "3–6 weeks",
+    popular: false,
+    features: [
+      "Up to 15 pages",
+      "Custom UI design and development",
+      "Content management system",
+      "Dynamic blog or news section",
+      "Admin content management",
+      "Inquiry and quote forms",
+      "Email notifications",
+      "SEO-friendly content structure",
+      "30-day post-launch bug support",
+    ],
+  },
+  {
+    id: "web-app",
+    service: "web-app",
+    name: "Custom Web Application",
+    price: null,
+    priceLabel: "From ₦1,500,000",
+    description: "A tailored web application designed around your business processes.",
+    timeline: "6–12+ weeks",
+    popular: true,
+    features: [
+      "Custom UI/UX",
+      "User authentication",
+      "Database design and integration",
+      "User roles and permissions",
+      "Dashboards and admin panels",
+      "API development and integration",
+      "Form validation and file uploads",
+      "Testing and deployment",
+      "Project-specific documentation",
+    ],
+  },
+  {
+    id: "ecommerce",
+    service: "ecommerce",
+    name: "E-commerce Store",
+    price: 700000,
+    priceLabel: "From ₦700,000",
+    description: "A complete online store for showcasing products and accepting orders.",
+    timeline: "4–8 weeks",
+    popular: true,
+    features: [
+      "Custom storefront",
+      "Product categories and details",
+      "Shopping cart and checkout",
+      "Paystack payment integration",
+      "Admin product management",
+      "Order management",
+      "Basic inventory management",
+      "Customer accounts",
+      "Order email notifications",
+      "Responsive design",
+    ],
+  },
+];
+
+export const addOns = [
+  {
+    group: "Design & User Experience",
+    items: [
+      { id: "advanced-animations", label: "Advanced animations", price: 30000 },
+      { id: "dark-mode", label: "Dark mode", price: 25000 },
+      { id: "multi-language", label: "Multi-language support", price: 80000 },
+      { id: "custom-graphics", label: "Custom graphics and illustrations", price: 30000 },
+    ],
+  },
+  {
+    group: "Business Functionality",
+    items: [
+      { id: "booking", label: "Booking and scheduling system", price: 100000 },
+      { id: "whatsapp", label: "WhatsApp integration", price: 10000 },
+      { id: "live-chat", label: "Live chat integration", price: 20000 },
+      { id: "newsletter", label: "Newsletter subscription", price: 25000 },
+      { id: "file-upload", label: "File upload functionality", price: 30000 },
+    ],
+  },
+  {
+    group: "CMS & Administration",
+    items: [
+      { id: "sanity-cms", label: "Sanity CMS integration", price: 100000 },
+      { id: "blog", label: "Blog and content management", price: 80000 },
+      { id: "admin-dashboard", label: "Basic admin dashboard", price: 150000 },
+      { id: "authentication", label: "User authentication", price: 100000 },
+      { id: "analytics", label: "Analytics dashboard", price: 100000 },
+    ],
+  },
+  {
+    group: "Payments & Integrations",
+    items: [
+      { id: "paystack", label: "Paystack integration", price: 70000 },
+      { id: "email-automation", label: "Automated email workflows", price: 60000 },
+      { id: "third-party-api", label: "Third-party API integration", price: 50000 },
+      { id: "google-maps", label: "Google Maps API integration", price: 50000 },
+    ],
+  },
+  {
+    group: "E-commerce Features",
+    items: [
+      { id: "product-search", label: "Advanced product search and filtering", price: 50000 },
+      { id: "wishlist", label: "Wishlist", price: 40000 },
+      { id: "coupons", label: "Discounts and coupons", price: 50000 },
+      { id: "shipping", label: "Shipping integration", price: 80000 },
+      { id: "advanced-inventory", label: "Advanced inventory management", price: 100000 },
+    ],
+  },
+];
+
+export const assets = [
+  { id: "logo", label: "Logo / Brand identity" },
+  { id: "design", label: "Figma or design mockups" },
+  { id: "content", label: "Website text and images" },
+  { id: "domain", label: "Registered domain name" },
+  { id: "hosting", label: "Hosting account" },
+  { id: "existing-code", label: "Existing website or codebase" },
+];
+
+export const timelines = [
+  "Within 2 weeks",
+  "3–4 weeks",
+  "1–2 months",
+  "3+ months",
+  "Flexible",
+];
+
+export const budgets = [
+  "Below ₦200,000",
+  "₦200,000 – ₦500,000",
+  "₦500,000 – ₦1,000,000",
+  "₦1,000,000 – ₦2,000,000",
+  "₦2,000,000 – ₦5,000,000",
+  "Above ₦5,000,000",
+  "Not sure yet",
+];
