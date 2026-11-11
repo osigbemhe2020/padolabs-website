@@ -168,7 +168,7 @@ const BackLink = styled(Link)`
   color: rgba(107, 114, 128, 1);
   font-weight: 500;
   transition: color 0.2s ease;
-  &:hover { color: #667eea; }
+  &:hover { color: var(--sf-primary, #667eea); }
 `;
 
 const Badge = styled.span`
@@ -177,8 +177,8 @@ const Badge = styled.span`
   gap: 0.5rem;
   padding: 0.25rem 0.75rem;
   border-radius: 9999px;
-  background: rgba(102, 126, 234, 0.1);
-  color: #667eea;
+  background: var(--sf-primary-soft, rgba(102, 126, 234, 0.1));
+  color: var(--sf-primary, #667eea);
   font-size: 0.75rem;
   font-weight: 500;
 `;
@@ -271,12 +271,12 @@ const HeroBackground = styled.div`
 const HeroBlob = styled.div`
   position: absolute;
   border-radius: 9999px;
-  background: rgba(59, 130, 246, 0.18);
+  background: rgba(var(--sf-primary-rgb, 59, 130, 246), 0.12);
   filter: blur(4rem);
 `;
 
 const HeroBlobAccent = styled(HeroBlob)`
-  background: rgba(168, 85, 247, 0.35);
+  background: rgba(var(--sf-primary-rgb, 168, 85, 247), 0.16);
 `;
 
 
@@ -290,18 +290,18 @@ const HeroHeading = styled.h1`
   letter-spacing: -0.03em;
   margin-bottom: 1.25rem;
   margin-top: 1.25rem;
-
+  color: var(--sf-ink, inherit);
 `;
 
 const HeroCopy = styled.p`
   max-width: 48rem;
   margin: 0 auto 0.75rem;
   font-size: 1.125rem;
-  color: rgba(15, 23, 42, 0.8);
+  color: var(--sf-body, rgba(15, 23, 42, 0.8));
   line-height: 1.8;
 `;
 
 const HeroSubtext = styled(Description)`
   margin: 0 auto;
-  color: rgba(15, 23, 42, 0.72);
+  color: var(--sf-muted, rgba(15, 23, 42, 0.72));
 `;

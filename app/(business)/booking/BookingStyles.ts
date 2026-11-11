@@ -1,8 +1,27 @@
 import styled from "styled-components";
+import { HeroContentWrapper } from "@/components/shared/Wrappers.styled";
 
 export const BookingLayout = styled.div`
   max-width: 900px;
   margin: 0 auto;
+`;
+
+export const BookingHeroContent = styled(HeroContentWrapper)`
+  h1 {
+    margin-bottom: 0.75rem;
+    color: var(--sf-ink, #111114);
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    font-weight: 700;
+    line-height: 1.15;
+  }
+
+  p {
+    max-width: 42rem;
+    margin: 0 auto;
+    color: var(--sf-body, #62616d);
+    font-size: 1rem;
+    line-height: 1.7;
+  }
 `;
 
 export const ProgressWrapper = styled.div`
@@ -18,7 +37,9 @@ export const ProgressStep = styled.div<{ $active: boolean; $completed: boolean }
   height: 5px;
   border-radius: 10px;
   background: ${({ $active, $completed }) =>
-    $active || $completed ? "#7654d6" : "#e8e5ef"};
+    $active || $completed
+      ? "var(--sf-primary, #7654d6)"
+      : "var(--sf-border, #e8e5ef)"};
 `;
 
 export const FormSection = styled.div`
@@ -29,11 +50,11 @@ export const SectionTitle = styled.h2`
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
-  color: #171717;
+  color: var(--sf-ink, #171717);
 `;
 
 export const SectionDescription = styled.p`
-  color: #737373;
+  color: var(--sf-muted, #737373);
   font-size: 0.95rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;
@@ -53,18 +74,20 @@ export const SelectionCard = styled.button<{ $selected: boolean }>`
   width: 100%;
   text-align: left;
   padding: 1.25rem;
-  border: 1px solid ${({ $selected }) => ($selected ? "#7654d6" : "#e5e5e5")};
+  border: 1px solid ${({ $selected }) =>
+    $selected ? "var(--sf-primary, #7654d6)" : "var(--sf-border, #e5e5e5)"};
   border-radius: 12px;
-  background: ${({ $selected }) => ($selected ? "#f7f4ff" : "#fff")};
+  background: ${({ $selected }) =>
+    $selected ? "var(--sf-primary-soft, #f7f4ff)" : "var(--sf-white, #fff)"};
   cursor: pointer;
   transition: 0.2s ease;
 
   &:hover {
-    border-color: #7654d6;
+    border-color: var(--sf-primary, #7654d6);
   }
 
   &:focus-visible {
-    outline: 3px solid rgba(118, 84, 214, 0.25);
+    outline: 3px solid rgba(119, 59, 219, 0.25);
     outline-offset: 2px;
   }
 `;
@@ -72,13 +95,13 @@ export const SelectionCard = styled.button<{ $selected: boolean }>`
 export const CardTitle = styled.h3`
   font-size: 1rem;
   font-weight: 700;
-  color: #171717;
+  color: var(--sf-ink, #171717);
   margin-bottom: 0.5rem;
 `;
 
 export const CardDescription = styled.p`
   font-size: 0.875rem;
-  color: #737373;
+  color: var(--sf-muted, #737373);
   line-height: 1.5;
 `;
 
@@ -86,7 +109,7 @@ export const CardMeta = styled.p`
   margin-top: 0.85rem;
   font-size: 0.9rem;
   font-weight: 700;
-  color: #7654d6;
+  color: var(--sf-primary, #7654d6);
 `;
 
 export const PopularLabel = styled.span`
@@ -94,8 +117,8 @@ export const PopularLabel = styled.span`
   padding: 0.3rem 0.6rem;
   margin-bottom: 0.75rem;
   border-radius: 20px;
-  background: #eee8ff;
-  color: #6844c2;
+  background: var(--sf-primary-soft, #eee8ff);
+  color: var(--sf-primary-dark, #6844c2);
   font-size: 0.75rem;
   font-weight: 700;
 `;
@@ -119,7 +142,7 @@ export const FormGroup = styled.div`
   label {
     font-size: 0.9rem;
     font-weight: 600;
-    color: #262626;
+    color: var(--sf-ink, #262626);
   }
 
   input,
@@ -127,17 +150,17 @@ export const FormGroup = styled.div`
   textarea {
     width: 100%;
     padding: 0.85rem 1rem;
-    border: 1px solid #dedede;
+    border: 1px solid var(--sf-border, #dedede);
     border-radius: 8px;
-    background: #fff;
-    color: #171717;
+    background: var(--sf-white, #fff);
+    color: var(--sf-ink, #171717);
     font: inherit;
     font-size: 0.9rem;
     outline: none;
 
     &:focus {
-      border-color: #7654d6;
-      box-shadow: 0 0 0 3px rgba(118, 84, 214, 0.1);
+      border-color: var(--sf-primary, #7654d6);
+      box-shadow: 0 0 0 3px rgba(119, 59, 219, 0.1);
     }
   }
 
@@ -162,18 +185,18 @@ export const CheckboxItem = styled.label`
   align-items: flex-start;
   gap: 0.65rem;
   padding: 0.9rem;
-  border: 1px solid #e5e5e5;
+  border: 1px solid var(--sf-border, #e5e5e5);
   border-radius: 8px;
   cursor: pointer;
 
   input {
     margin-top: 0.2rem;
-    accent-color: #7654d6;
+    accent-color: var(--sf-primary, #7654d6);
   }
 
   span {
     font-size: 0.875rem;
-    color: #404040;
+    color: var(--sf-body, #404040);
     line-height: 1.5;
   }
 `;
@@ -181,9 +204,9 @@ export const CheckboxItem = styled.label`
 export const SummaryCard = styled.aside`
   padding: 1.5rem;
   margin: 2rem 0;
-  border: 1px solid #e5e5e5;
+  border: 1px solid var(--sf-border, #e5e5e5);
   border-radius: 12px;
-  background: #fafafa;
+  background: var(--sf-lavender-soft, #fafafa);
 `;
 
 export const SummaryRow = styled.div`
@@ -192,10 +215,10 @@ export const SummaryRow = styled.div`
   gap: 1rem;
   padding: 0.65rem 0;
   font-size: 0.9rem;
-  color: #525252;
+  color: var(--sf-body, #525252);
 
   strong {
-    color: #171717;
+    color: var(--sf-ink, #171717);
     text-align: right;
   }
 `;
@@ -206,10 +229,10 @@ export const SummaryTotal = styled.div`
   gap: 1rem;
   padding-top: 1rem;
   margin-top: 0.75rem;
-  border-top: 1px solid #dedede;
+  border-top: 1px solid var(--sf-border, #dedede);
   font-size: 1.05rem;
   font-weight: 700;
-  color: #171717;
+  color: var(--sf-ink, #171717);
 `;
 
 export const ButtonRow = styled.div`
@@ -227,7 +250,7 @@ export const PrimaryButton = styled.button`
   padding: 0.95rem 1.5rem;
   border: none;
   border-radius: 8px;
-  background: #7654d6;
+  background: var(--sf-primary, #7654d6);
   color: #fff;
   font-size: 0.9rem;
   font-weight: 700;
@@ -235,7 +258,7 @@ export const PrimaryButton = styled.button`
   transition: 0.2s ease;
 
   &:hover {
-    background: #6240bd;
+    background: var(--sf-primary-dark, #6240bd);
   }
 
   &:disabled {
@@ -246,16 +269,16 @@ export const PrimaryButton = styled.button`
 
 export const SecondaryButton = styled.button`
   padding: 0.95rem 1.5rem;
-  border: 1px solid #dedede;
+  border: 1px solid var(--sf-border, #dedede);
   border-radius: 8px;
-  background: #fff;
-  color: #404040;
+  background: var(--sf-white, #fff);
+  color: var(--sf-body, #404040);
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
 
   &:hover {
-    background: #f5f5f5;
+    background: var(--sf-lavender-soft, #f5f5f5);
   }
 `;
 
@@ -270,7 +293,7 @@ export const Notice = styled.p<{ $error?: boolean }>`
 `;
 
 export const MutedText = styled.p`
-  color: #737373;
+  color: var(--sf-muted, #737373);
   font-size: 0.85rem;
   line-height: 1.6;
 `;
@@ -279,7 +302,7 @@ export const PackagesLink = styled.a`
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  color: #7654d6;
+  color: var(--sf-primary, #7654d6);
   font-size: 0.9rem;
   font-weight: 600;
   text-decoration: none;
@@ -287,7 +310,7 @@ export const PackagesLink = styled.a`
   transition: color 0.2s ease;
 
   &:hover {
-    color: #6240bd;
+    color: var(--sf-primary-dark, #6240bd);
     text-decoration: underline;
   }
 `;

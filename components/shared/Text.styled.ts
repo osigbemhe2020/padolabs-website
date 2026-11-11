@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const NormalText = styled.p`
   font-size: 1rem;
   line-height: 1.6;
-  color: rgba(17, 24, 39, 0.8);
+  color: var(--sf-body, rgba(17, 24, 39, 0.8));
 `;
 
 export const GradientText = styled.span`
@@ -16,7 +16,7 @@ export const GradientText = styled.span`
 export const TitleText = styled.h2`
   font-size: 1.875rem;
   font-weight: 700;
-  color: #111827;
+  color: var(--sf-ink, #111827);
   margin-bottom: 1rem;
 
   @media (min-width: 640px) {
@@ -29,6 +29,7 @@ export const Title = styled.h1`
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.025em;
+  color: var(--sf-ink, #111827);
 
   @media (min-width: 1024px) {
     font-size: 2.5rem;
@@ -37,7 +38,7 @@ export const Title = styled.h1`
 
 export const Description = styled.p`
   font-size: 1rem;
-  color: #6b7280;
+  color: var(--sf-muted, #6b7280);
   max-width: 30rem;
   line-height: 1.4;
 `;

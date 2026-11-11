@@ -39,7 +39,7 @@ export const LearnMoreButton = styled.button`
   padding: 0.6rem 1rem;
   background: transparent;
   color: #111827;
-  border: 1px solid rgba(102, 126, 234, 0.3);
+  border: 1px solid rgba(var(--sf-primary-rgb, 102, 126, 234), 0.3);
   border-radius: 9999px;
   font-weight: 500;
   cursor: pointer;
@@ -50,8 +50,8 @@ export const LearnMoreButton = styled.button`
   text-decoration: none;
 
   &:hover {
-    background: rgba(102, 126, 234, 0.1);
-    border-color: rgba(102, 126, 234, 0.45);
+    background: var(--sf-primary-soft, rgba(102, 126, 234, 0.1));
+    border-color: var(--sf-primary, rgba(102, 126, 234, 0.45));
   }
 `;
 
@@ -59,7 +59,7 @@ export const LearnMoreButton = styled.button`
 export const ReadMoreButton = styled.button`
   background: none;
   border: none;
-  color: #667eea;
+  color: var(--sf-primary, #667eea);
   padding: 0;
   height: auto;
   font-weight: 500;
@@ -71,7 +71,7 @@ export const ReadMoreButton = styled.button`
   transition: color 0.2s ease;
 
   &:hover {
-    color: rgba(102, 126, 234, 0.8);
+    color: var(--sf-primary-dark, rgba(102, 126, 234, 0.8));
   }
 `;
 
@@ -88,7 +88,7 @@ export const PrimaryButton = styled.button`
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
-  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 10px 25px rgba(var(--sf-primary-rgb, 102, 126, 234), 0.3);
   transition: opacity 0.2s ease, transform 0.2s ease;
   text-decoration: none;
 
@@ -106,8 +106,8 @@ export const PrimaryButton = styled.button`
 export const SecondaryButton = styled.button`
   padding: 0.75rem 1.5rem;
   background: transparent;
-  color: #764ba2 ;
-  border: 1px solid #764ba2 ;
+  color: var(--sf-primary, #764ba2);
+  border: 1px solid var(--sf-primary, #764ba2);
   border-radius: 0.5rem;
   font-size: 1rem;
   font-weight: 500;
@@ -115,8 +115,8 @@ export const SecondaryButton = styled.button`
   transition: background-color 0.2s ease, color 0.2s ease;
 
   &:hover {
-    background: rgba(102, 126, 234, 0.1);
-    color: #667eea;
+    background: var(--sf-primary-soft, rgba(102, 126, 234, 0.1));
+    color: var(--sf-primary, #667eea);
   }
 
   @media (min-width: 1024px) {

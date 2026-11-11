@@ -2,6 +2,14 @@ import styled from "styled-components";
 import { Container } from "./shared";
 import { ArrowUpRightIcon } from "./icons";
 
+type CtaProps = {
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  actionLabel?: string;
+  actionHref?: string;
+};
+
 const CtaSection = styled.section`
   background: #EDE7F8;
   padding: 0 0 96px;
@@ -89,19 +97,23 @@ const BannerAction = styled.a`
   }
 `;
 
-export const Cta = () => (
+export const Cta = ({
+  eyebrow = "Let’s build what’s next",
+  title = "Have an idea worth building?",
+  description = "Let’s find the right digital solution for your business.",
+  actionLabel = "Let’s Talk About Your Project",
+  actionHref = "mailto:hello@solutionfactory.io",
+}: CtaProps) => (
   <CtaSection id="contact">
     <Container>
       <Banner>
         <BannerContent>
-          <Eyebrow>Let’s build what’s next</Eyebrow>
-          <BannerTitle>Have an idea worth building?</BannerTitle>
-          <BannerBody>
-            Let&apos;s find the right digital solution for your business.
-          </BannerBody>
+          {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
+          <BannerTitle>{title}</BannerTitle>
+          <BannerBody>{description}</BannerBody>
         </BannerContent>
-        <BannerAction href="mailto:hello@solutionfactory.io">
-          Let&apos;s Talk About Your Project <ArrowUpRightIcon />
+        <BannerAction href={actionHref}>
+          {actionLabel} <ArrowUpRightIcon />
         </BannerAction>
       </Banner>
     </Container>

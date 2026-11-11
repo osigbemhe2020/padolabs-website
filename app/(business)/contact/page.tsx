@@ -6,10 +6,10 @@ import Footer from "@/components/layout/Footer";
 import { HeroSectionNoImage } from "@/components/home/HeroSection";
 import { GradientText } from "@/components/shared/Text.styled";
 import { Description, Title } from "@/components/shared/Text.styled";
-import { Container, PageWrapper,ContentWrapper } from "@/components/shared/Wrappers.styled";
+import { Container, ContentWrapper } from "@/components/shared/Wrappers.styled";
 import { ContactForm } from "@/components/shared/ContactForm";
 import { ContactMethodCard, ContactMethodsGrid } from "@/components/shared/ContactMethodCard";
-import CTASection from "@/components/home/CTASection";
+import { Cta } from "@/components/business/Cta";
 import { ContactInfoPanel } from "@/components/shared/ContactInfoPanel";
 import { Mail, Github, Linkedin, Twitter, Clock,} from "lucide-react";
 import { ToastContainer, toast } from "react-toastify";
@@ -48,8 +48,8 @@ const Contact = () => {
     const templateParams = {
       from_name: form.name,
       from_email: form.email,
-      subject: form.subject,
-      message: form.message,
+      subject: "Contact Us",
+      message: `Subject: ${form.subject}\n\n${form.message}`,
     };
 
     try {
@@ -83,7 +83,7 @@ const Contact = () => {
           subtext="Fill out the form below or reach out directly through any of my social channels."
         />
 
-      <Section $backgroundColor="#f8fafc">
+      <Section $backgroundColor="#ffffff">
         <ContentWrapper>
           <TwoColumnGrid>
             <LeftColumn>
@@ -109,7 +109,7 @@ const Contact = () => {
         </ContentWrapper>
       </Section>
 
-       <Section $backgroundColor="#eef2ff">
+       <Section $backgroundColor="#ede7f8">
         <ContentWrapper>
           <CenterHeader>
             <SectionTitle>Or reach me directly</SectionTitle>
@@ -131,11 +131,12 @@ const Contact = () => {
       </Section> 
 
      
-          <CTASection
+          <Cta
+            eyebrow=""
             title="Have an idea worth building?"
             description="Let's turn it into a real-world digital experience."
-            buttonText="Start a Project"
-            buttonLink="/booking"
+            actionLabel="Start a Project"
+            actionHref="/booking"
           />
         
 
@@ -196,4 +197,3 @@ const SectionDescription = styled(Description)`
   margin: 0;
   line-height: 1.75;
 `;
-

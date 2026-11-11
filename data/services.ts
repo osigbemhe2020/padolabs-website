@@ -4,6 +4,7 @@ import {
   ShoppingBag,
   MessageSquare,
   Sparkles,
+  Palette,
 } from "lucide-react";
 
 export const services = [
@@ -32,10 +33,93 @@ export const services = [
     icon: MessageSquare,
   },
   {
+    id: "brand-identity",
+    label: "Design & Branding",
+    description: "Brand strategy and visual identity for businesses at every stage.",
+    icon: Palette,
+  },
+  {
     id: "other",
     label: "Custom Solution",
     description: "Something different? Tell me what you have in mind.",
     icon: Sparkles,
+  },
+];
+
+export const brandingPackages = [
+  {
+    id: "brand-starter",
+    service: "brand-identity",
+    name: "Brand Starter",
+    price: 150000,
+    priceLabel: "From ₦150,000",
+    description:
+      "A focused visual foundation for new businesses that need to look professional from day one.",
+    timeline: "Confirmed after scope review",
+    popular: false,
+    buttonLabel: "Get Started",
+    bestFor: "New businesses, side hustles, and personal brands.",
+    features: [
+      "Logo design",
+      "Primary + secondary logo variations",
+      "Colour palette",
+      "Typography selection",
+      "Basic brand guidelines",
+      "Social profile assets",
+      "2 revision rounds",
+    ],
+  },
+  {
+    id: "brand-identity",
+    service: "brand-identity",
+    name: "Brand Identity",
+    price: 300000,
+    priceLabel: "From ₦300,000",
+    description:
+      "A complete visual identity for businesses ready to establish a recognizable and consistent brand.",
+    timeline: "Confirmed after scope review",
+    popular: true,
+    buttonLabel: "Choose Brand Identity",
+    bestFor: "Startups and growing businesses.",
+    features: [
+      "Everything in Brand Starter",
+      "Logo system",
+      "Brand colour system",
+      "Typography system",
+      "Brand patterns / graphic elements",
+      "Icon style",
+      "Social media templates",
+      "Business card / stationery",
+      "Brand guidelines document",
+      "3 revision rounds",
+    ],
+  },
+  {
+    id: "complete-brand-system",
+    service: "brand-identity",
+    name: "Complete Brand System",
+    price: 550000,
+    priceLabel: "From ₦550,000",
+    description:
+      "A complete brand foundation for businesses preparing for a major launch, growth phase, or rebrand.",
+    timeline: "Confirmed after scope review",
+    popular: false,
+    buttonLabel: "Build My Brand",
+    bestFor: "Established businesses, major launches, and complete rebrands.",
+    features: [
+      "Brand strategy session",
+      "Logo suite",
+      "Full visual identity",
+      "Colour + typography system",
+      "Graphic language",
+      "Illustration / icon direction",
+      "Social media starter kit",
+      "Business stationery",
+      "Brand presentation mockups",
+      "Comprehensive brand guidelines",
+      "Brand launch assets",
+      "3 revision rounds",
+    ],
   },
 ];
 
@@ -145,6 +229,7 @@ export const packages = [
       "Responsive design",
     ],
   },
+  ...brandingPackages,
 ];
 
 export const addOns = [

@@ -81,7 +81,7 @@ const FormCard = styled.div`
   background: white;
   padding: 2rem;
   border-radius: 1.5rem;
-  border: 1px solid rgba(226, 232, 240, 0.9);
+  border: 1px solid var(--sf-border, rgba(226, 232, 240, 0.9));
   box-shadow: 0 18px 50px rgba(15, 23, 42, 0.05);
 `;
 
@@ -107,24 +107,24 @@ const Field = styled.div`
 const FieldLabel = styled.label`
   font-size: 0.95rem;
   font-weight: 600;
-  color: #0f172a;
+  color: var(--sf-ink, #0f172a);
 `;
 
 const StyledInput = styled.input`
   width: 100%;
   min-height: 3rem;
   border-radius: 1rem;
-  border: 1px solid rgba(226, 232, 240, 0.95);
-  background: #f8fafc;
+  border: 1px solid var(--sf-border, rgba(226, 232, 240, 0.95));
+  background: var(--sf-lavender-soft, #f8fafc);
   padding: 0.95rem 1rem;
   font-size: 1rem;
-  color: #0f172a;
+  color: var(--sf-ink, #0f172a);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 
   &:focus {
     outline: none;
-    border-color: rgba(59, 130, 246, 0.75);
-    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+    border-color: var(--sf-primary, rgba(59, 130, 246, 0.75));
+    box-shadow: 0 0 0 4px rgba(var(--sf-primary-rgb, 59, 130, 246), 0.12);
   }
 `;
 
@@ -132,18 +132,18 @@ const StyledTextarea = styled.textarea`
   width: 100%;
   min-height: 10rem;
   border-radius: 1rem;
-  border: 1px solid rgba(226, 232, 240, 0.95);
-  background: #f8fafc;
+  border: 1px solid var(--sf-border, rgba(226, 232, 240, 0.95));
+  background: var(--sf-lavender-soft, #f8fafc);
   padding: 1rem;
   font-size: 1rem;
-  color: #0f172a;
+  color: var(--sf-ink, #0f172a);
   resize: none;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 
   &:focus {
     outline: none;
-    border-color: rgba(59, 130, 246, 0.75);
-    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+    border-color: var(--sf-primary, rgba(59, 130, 246, 0.75));
+    box-shadow: 0 0 0 4px rgba(var(--sf-primary-rgb, 59, 130, 246), 0.12);
   }
 `;
 

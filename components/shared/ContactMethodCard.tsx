@@ -42,7 +42,7 @@ const ContactCard = styled.div`
   padding: 1.5rem;
   border-radius: 1.5rem;
   background: white;
-  border: 1px solid rgba(226, 232, 240, 0.9);
+  border: 1px solid var(--sf-border, rgba(226, 232, 240, 0.9));
   box-shadow: 0 18px 45px rgba(15, 23, 42, 0.05);
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
   gap: 0.5rem;
@@ -53,7 +53,7 @@ const ContactCard = styled.div`
 
   &:hover {
     transform: translateY(-0.25rem);
-    border-color: rgba(59, 130, 246, 0.3);
+    border-color: rgba(var(--sf-primary-rgb, 59, 130, 246), 0.3);
     box-shadow: 0 24px 55px rgba(15, 23, 42, 0.08);
   }
 `;
@@ -65,14 +65,14 @@ const MethodIcon = styled.div`
   place-items: center;
   border-radius: 1rem;
   background: rgba(243, 244, 246, 0.85);
-  color: #2563eb;
+  color: var(--sf-primary, #2563eb);
 `;
 
 const MethodName = styled.h3`
   margin: 0;
   font-size: 1.05rem;
   font-weight: 700;
-  color: #0f172a;
+  color: var(--sf-ink, #0f172a);
 `;
 
 const MethodHandle = styled.p`
@@ -84,6 +84,6 @@ const MethodHandle = styled.p`
 const MethodNote = styled.p`
   margin: 0;
   font-size: 0.88rem;
-  color: #64748b;
+  color: var(--sf-muted, #64748b);
   line-height: 1.7;
 `;

@@ -10,7 +10,7 @@ const montserrat = Montserrat({
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className={montserrat.className} id="top">
+    <div className={montserrat.className} id="top" data-sf-theme>
       <GlobalStyle />
       <Nav />
       {children}

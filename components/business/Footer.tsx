@@ -59,6 +59,11 @@ const Explore = styled.div`
   align-items: flex-start;
   gap: 12px;
   flex: 0 0 192px;
+
+  @media (max-width: 768px) {
+    flex: 1 1 100%;
+    width: 100%;
+  }
 `;
 
 const GroupTitle = styled.h4`
@@ -77,6 +82,13 @@ const FooterNav = styled.nav`
   align-content: flex-start;
   align-self: stretch;
   gap: 8px 24px;
+
+  @media (max-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+    gap: 4px 16px;
+  }
 `;
 
 const NavItem = styled.a`

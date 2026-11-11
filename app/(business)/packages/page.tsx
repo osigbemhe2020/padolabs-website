@@ -4,7 +4,7 @@ import Link from "next/link";
 import styled from "styled-components";
 import { Check, ArrowRight, Sparkles } from "lucide-react";
 import Footer from "@/components/layout/Footer";
-import { packages, addOns } from "@/data/services";
+import { brandingPackages, packages, addOns } from "@/data/services";
 
 export default function Packages() {
   return (
@@ -12,11 +12,12 @@ export default function Packages() {
       <Hero>
         <Eyebrow>OUR SERVICES</Eyebrow>
         <HeroTitle>
-          Websites and digital products built around your <Gradient>business goals.</Gradient>
+          Build a brand and digital presence around your <Gradient>business goals.</Gradient>
         </HeroTitle>
         <HeroText>
-          From a simple business website to a fully functional web application,
-          choose a starting package and let&apos;s shape the right solution for you.
+          From a recognizable visual identity to a fully functional web
+          application, choose a starting package and let&apos;s shape the right
+          solution for you.
         </HeroText>
         <HeroActions>
           <PrimaryLink href="/booking">
@@ -31,14 +32,20 @@ export default function Packages() {
           <Eyebrow>PACKAGES</Eyebrow>
           <Heading>Find the right starting point</Heading>
           <Description>
-            Every project is different. These packages provide a clear starting
-            scope, and custom requirements can be discussed during consultation.
+            Explore design, branding, website, and application packages. Each
+            provides a clear starting scope, with custom requirements discussed
+            during consultation.
           </Description>
         </SectionHeading>
 
         <PackageGrid>
-          {packages.map((item) => (
+          {[...packages.filter((item) => item.service !== "brand-identity"), ...brandingPackages].map((item) => (
             <PackageCard key={item.id} $popular={item.popular}>
+              <PackageCategory>
+                {item.service === "brand-identity"
+                  ? "DESIGN & BRANDING"
+                  : "WEB & DIGITAL PRODUCTS"}
+              </PackageCategory>
               {item.popular && <PopularTag>Popular choice</PopularTag>}
 
               <PackageName>{item.name}</PackageName>
@@ -56,8 +63,18 @@ export default function Packages() {
                 ))}
               </FeatureList>
 
+              {"bestFor" in item && typeof item.bestFor === "string" && (
+                <BestFor>
+                  <strong>Best for</strong>
+                  <span>{item.bestFor}</span>
+                </BestFor>
+              )}
+
               <PackageLink href={`/booking?service=${item.service}&package=${item.id}`}>
-                Choose this package <ArrowRight size={16} />
+                {"buttonLabel" in item && typeof item.buttonLabel === "string"
+                  ? item.buttonLabel
+                  : "Choose this package"}{" "}
+                <ArrowRight size={16} />
               </PackageLink>
             </PackageCard>
           ))}
@@ -119,16 +136,33 @@ export default function Packages() {
   );
 }
 
+const PackageCategory = styled.span`
+  margin-bottom: 0.75rem;
+  color: #773bdb;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+`;
+
+const BestFor = styled.div`
+  display: grid;
+  gap: 0.35rem;
+  margin-top: 1rem;
+  color: #6e6e78;
+  font-size: 0.75rem;
+  line-height: 1.5;
+`;
+
 const Hero = styled.section`
-  padding: 7rem 1.5rem 5rem;
+  padding: 3rem 1.5rem ;
   text-align: center;
-  background: #f8fafc;
+  background: var(--sf-lavender, #f8fafc);
 `;
 
 const Eyebrow = styled.span`
   display: inline-block;
-  color: #667eea;
-  background: rgba(102, 126, 234, 0.1);
+  color: var(--sf-primary, #667eea);
+  background: var(--sf-primary-soft, rgba(102, 126, 234, 0.1));
   padding: 0.4rem 0.8rem;
   border-radius: 999px;
   font-size: 0.75rem;
@@ -139,7 +173,7 @@ const Eyebrow = styled.span`
 const HeroTitle = styled.h1`
   max-width: 850px;
   margin: 1.5rem auto;
-  color: #111827;
+  color: var(--sf-ink, #111827);
   font-size: clamp(2.2rem, 5vw, 3.8rem);
   line-height: 1.12;
   font-weight: 800;
@@ -155,7 +189,7 @@ const Gradient = styled.span`
 const HeroText = styled.p`
   max-width: 650px;
   margin: 0 auto;
-  color: #6b7280;
+  color: var(--sf-muted, #6b7280);
   line-height: 1.8;
 `;
 
@@ -187,7 +221,7 @@ const PrimaryLink = styled(Link)`
 `;
 
 const SecondaryLink = styled(Link)`
-  color: #4b5563;
+  color: var(--sf-body, #4b5563);
   text-decoration: none;
   font-weight: 600;
   padding: 0.9rem 1rem;
@@ -195,7 +229,8 @@ const SecondaryLink = styled(Link)`
 
 const Section = styled.section<{ $background?: boolean }>`
   padding: 5rem 1.5rem;
-  background: ${(p) => (p.$background ? "#f8fafc" : "white")};
+  background: ${(p) =>
+    p.$background ? "var(--sf-lavender-soft, #f8fafc)" : "var(--sf-white, white)"};
 `;
 
 const SectionHeading = styled.div`
@@ -205,33 +240,38 @@ const SectionHeading = styled.div`
 `;
 
 const Heading = styled.h2`
-  color: #111827;
+  color: var(--sf-ink, #111827);
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   margin: 1rem 0;
 `;
 
 const Description = styled.p`
-  color: #6b7280;
+  color: var(--sf-muted, #6b7280);
   line-height: 1.7;
 `;
 
 const PackageGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.25rem;
   max-width: 1250px;
   margin: auto;
   align-items: stretch;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const PackageCard = styled.article<{ $popular?: boolean }>`
   position: relative;
   padding: 2rem;
   border-radius: 1.25rem;
-  border: 1px solid ${(p) => (p.$popular ? "#667eea" : "#e5e7eb")};
+  border: 1px solid
+    ${(p) => (p.$popular ? "var(--sf-primary, #667eea)" : "var(--sf-border, #e5e7eb)")};
   background: white;
   box-shadow: ${(p) =>
-    p.$popular ? "0 12px 35px rgba(102,126,234,.12)" : "0 4px 20px rgba(0,0,0,.035)"};
+    p.$popular ? "0 12px 35px rgba(119,59,219,.12)" : "0 4px 20px rgba(0,0,0,.035)"};
   display: flex;
   flex-direction: column;
 `;
@@ -239,7 +279,7 @@ const PackageCard = styled.article<{ $popular?: boolean }>`
 const PopularTag = styled.span`
   align-self: flex-start;
   background: rgba(102, 126, 234, 0.1);
-  color: #667eea;
+  color: var(--sf-primary, #667eea);
   border-radius: 999px;
   padding: 0.35rem 0.7rem;
   font-size: 0.75rem;
@@ -249,26 +289,26 @@ const PopularTag = styled.span`
 
 const PackageName = styled.h3`
   font-size: 1.3rem;
-  color: #111827;
+  color: var(--sf-ink, #111827);
   margin: 0 0 0.6rem;
 `;
 
 const PackageDescription = styled.p`
-  color: #6b7280;
+  color: var(--sf-muted, #6b7280);
   line-height: 1.6;
   min-height: 75px;
   font-size: 0.9rem;
 `;
 
 const Price = styled.p`
-  color: #111827;
+  color: var(--sf-ink, #111827);
   font-size: 1.8rem;
   font-weight: 800;
   margin: 1rem 0 0.3rem;
 `;
 
 const Timeline = styled.p`
-  color: #6b7280;
+  color: var(--sf-muted, #6b7280);
   font-size: 0.8rem;
   margin-bottom: 1.5rem;
 `;
@@ -286,12 +326,12 @@ const Feature = styled.li`
   display: flex;
   align-items: flex-start;
   gap: 0.65rem;
-  color: #4b5563;
+  color: var(--sf-body, #4b5563);
   font-size: 0.875rem;
   line-height: 1.5;
 
   svg {
-    color: #667eea;
+    color: var(--sf-primary, #667eea);
     flex-shrink: 0;
     margin-top: 2px;
   }
@@ -305,21 +345,21 @@ const PackageLink = styled(Link)`
   margin-top: auto;
   padding: 0.9rem 1rem;
   border-radius: 0.7rem;
-  color: #667eea;
-  border: 1px solid rgba(102, 126, 234, 0.35);
+  color: var(--sf-primary, #667eea);
+  border: 1px solid rgba(119, 59, 219, 0.35);
   text-decoration: none;
   font-size: 0.875rem;
   font-weight: 700;
 
   &:hover {
-    background: rgba(102, 126, 234, 0.07);
+    background: var(--sf-primary-soft, rgba(102, 126, 234, 0.07));
   }
 `;
 
 const Note = styled.p`
   max-width: 900px;
   margin: 2rem auto 0;
-  color: #6b7280;
+  color: var(--sf-muted, #6b7280);
   font-size: 0.85rem;
   line-height: 1.7;
   text-align: center;
@@ -334,14 +374,14 @@ const AddOnGrid = styled.div`
 `;
 
 const AddOnCard = styled.article`
-  background: white;
-  border: 1px solid #e5e7eb;
+  background: var(--sf-white, white);
+  border: 1px solid var(--sf-border, #e5e7eb);
   border-radius: 1rem;
   padding: 1.5rem;
 `;
 
 const AddOnTitle = styled.h3`
-  color: #111827;
+  color: var(--sf-ink, #111827);
   font-size: 1rem;
   margin: 0 0 1.2rem;
 `;
@@ -351,8 +391,8 @@ const AddOnRow = styled.div`
   justify-content: space-between;
   gap: 1rem;
   padding: 0.8rem 0;
-  border-bottom: 1px solid #f1f5f9;
-  color: #4b5563;
+  border-bottom: 1px solid var(--sf-border, #f1f5f9);
+  color: var(--sf-body, #4b5563);
   font-size: 0.83rem;
 
   &:last-child {
@@ -362,7 +402,7 @@ const AddOnRow = styled.div`
 
 const AddOnPrice = styled.span`
   white-space: nowrap;
-  color: #111827;
+  color: var(--sf-ink, #111827);
   font-weight: 700;
 `;
 
@@ -375,19 +415,19 @@ const CTA = styled.section`
   gap: 1rem;
 
   > svg {
-    color: #667eea;
+    color: var(--sf-primary, #667eea);
   }
 `;
 
 const CTATitle = styled.h2`
-  color: #111827;
+  color: var(--sf-ink, #111827);
   font-size: 2rem;
   margin: 0;
 `;
 
 const CTAText = styled.p`
   max-width: 600px;
-  color: #6b7280;
+  color: var(--sf-muted, #6b7280);
   line-height: 1.7;
   margin: 0 0 1rem;
 `;

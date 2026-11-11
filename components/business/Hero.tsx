@@ -9,6 +9,12 @@ const HeroWrapper = styled.section`
   height: calc(100svh - 80px);
   background: #EDE7F8;
   overflow: hidden;
+
+  @media (max-width: 1024px) {
+    height: auto;
+    min-height: calc(100svh - 80px);
+    overflow: visible;
+  }
 `;
 
 const HeroInner = styled(Container)`
@@ -25,6 +31,8 @@ const HeroInner = styled(Container)`
     flex-direction: column;
     flex-wrap: nowrap;
     gap: 16px;
+    height: auto;
+    min-height: calc(100svh - 80px);
     padding: 16px 0;
   }
 
@@ -212,7 +220,6 @@ export const Hero = () => (
           height={450}
           priority
         />
-        <HeroCaption>Illustrative product concepts by Solution Factory</HeroCaption>
       </HeroVisual>
     </HeroInner>
   </HeroWrapper>

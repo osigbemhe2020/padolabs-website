@@ -3,12 +3,12 @@ import styled from 'styled-components'
 
 export const PageWrapper = styled.div`
   min-height: 100vh;
-  background: #ffffff;
-  color: #171717;
+  background: var(--sf-white, #ffffff);
+  color: var(--sf-ink, #171717);
 `;
 export const Container = styled.section<{ $backgroundColor?: string }>`
   padding: 3rem 1.25rem;
-  background: ${props => props.$backgroundColor ? props.$backgroundColor : 'white'};
+  background: ${props => props.$backgroundColor ? props.$backgroundColor : 'var(--sf-white, white)'};
   position: relative;
 
   @media (min-width: 768px) {
@@ -24,7 +24,7 @@ export const HeroContainer = styled.div`
   position: relative;
   padding: 2.5rem 1.25rem;
   overflow: hidden;
-  background-color: #fff;
+  background-color: var(--sf-lavender, #fff);
 
   @media (min-width: 640px) {
     padding: 3.5rem 1.5rem;
@@ -41,8 +41,11 @@ export const GradientOverlay = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-  opacity: 0.6;
+  background: var(
+    --sf-hero-overlay,
+    linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%)
+  );
+  opacity: var(--sf-hero-overlay-opacity, 0.6);
   pointer-events: none;
 `;
 
@@ -163,4 +166,3 @@ export const ProjectGrid = styled.div`
     grid-template-columns: repeat(3, 1fr);
   }
 `;
-

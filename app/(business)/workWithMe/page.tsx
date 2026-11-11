@@ -1040,9 +1040,20 @@
 // This page is currently not in use. Uncomment the code above to restore functionality.
 export default function WorkWithMe() {
   return (
-    <div style={{ padding: "2rem", textAlign: "center" }}>
+    <div
+      style={{
+        minHeight: "calc(100vh - 80px)",
+        padding: "2rem",
+        display: "grid",
+        placeContent: "center",
+        gap: "0.75rem",
+        textAlign: "center",
+        color: "var(--sf-ink)",
+        background: "var(--sf-lavender)",
+      }}
+    >
       <h1>Work With Me</h1>
-      <p>This page is currently under construction.</p>
+      <p style={{ color: "var(--sf-muted)" }}>This page is currently under construction.</p>
     </div>
   );
 }

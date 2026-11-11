@@ -67,9 +67,9 @@ const HeroCard = styled.div`
   position: relative;
   min-height: 14rem;
   border-radius: 1.5rem;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.95));
+  background: linear-gradient(180deg, #fff, var(--sf-lavender-soft, #f8fafc));
   overflow: hidden;
-  border: 1px solid rgba(148, 163, 184, 0.16);
+  border: 1px solid var(--sf-border, rgba(148, 163, 184, 0.16));
   display: grid;
   place-items: center;
 `;
@@ -80,7 +80,7 @@ const HeroGraphic = styled.div`
   height: 100%;
   display: grid;
   place-items: center;
-  color: #3b82f6;
+  color: var(--sf-primary, #3b82f6);
 `;
 
 const InfoCard = styled.div`
@@ -89,7 +89,7 @@ const InfoCard = styled.div`
   padding: 1.25rem;
   border-radius: 1.25rem;
   background: white;
-  border: 1px solid rgba(226, 232, 240, 0.8);
+  border: 1px solid var(--sf-border, rgba(226, 232, 240, 0.8));
   box-shadow: 0 15px 45px rgba(15, 23, 42, 0.04);
   align-items: center;
 `;
@@ -100,19 +100,19 @@ const StatusIcon = styled.div`
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 9999px;
-  background: rgba(56, 189, 248, 0.16);
-  color: #0284c7;
+  background: var(--sf-primary-soft, rgba(56, 189, 248, 0.16));
+  color: var(--sf-primary, #0284c7);
 `;
 
 const InfoCopy = styled.div`
   display: grid;
   gap: 0.25rem;
-  color: #334155;
+  color: var(--sf-body, #334155);
 
   strong {
     font-size: 0.95rem;
     display: block;
-    color: #0f172a;
+    color: var(--sf-ink, #0f172a);
   }
 
   span {

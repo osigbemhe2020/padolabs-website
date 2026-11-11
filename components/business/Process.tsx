@@ -101,13 +101,19 @@ const Description = styled.p`
 `;
 
 const Grid = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  align-content: flex-start;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
   width: 100%;
   max-width: 1200px;
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const StepCard = styled.div`
@@ -115,12 +121,10 @@ const StepCard = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 24px;
-  flex: 1 1 260px;
-  min-width: 260px;
   min-height: 234px;
   padding: 24px;
-  background: #FFFFFF;
-  border-radius: 12px;
+  background: #111114;
+  border-radius: 16px;
 `;
 
 const StepIdentifier = styled.div`
@@ -146,7 +150,7 @@ const StepNumber = styled.span`
 
 const StepIcon = styled.span`
   display: inline-flex;
-  color: #773BDB;
+  color: #EDE7F8;
 `;
 
 const StepContent = styled.div`
@@ -161,7 +165,7 @@ const StepTitle = styled.h3`
   font-size: 24px;
   font-weight: 600;
   line-height: 32px;
-  color: #111114;
+  color: #FFFFFF;
 `;
 
 const StepBody = styled.p`
@@ -169,7 +173,7 @@ const StepBody = styled.p`
   font-size: 14px;
   font-weight: 400;
   line-height: 22px;
-  color: #62616D;
+  color: #C8C3D1;
 `;
 
 export const Process = () => (
