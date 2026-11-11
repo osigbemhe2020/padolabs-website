@@ -2,7 +2,6 @@
 
 import { useState, type FormEvent } from "react";
 import styled from "styled-components";
-import Footer from "@/components/layout/Footer";
 import { HeroSectionNoImage } from "@/components/home/HeroSection";
 import { GradientText } from "@/components/shared/Text.styled";
 import { Description, Title } from "@/components/shared/Text.styled";
@@ -140,7 +139,7 @@ const Contact = () => {
           />
         
 
-      <Footer />
+      
       <ToastContainer
         position="bottom-right"
         autoClose={3200}

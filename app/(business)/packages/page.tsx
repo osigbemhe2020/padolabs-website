@@ -3,14 +3,14 @@
 import Link from "next/link";
 import styled from "styled-components";
 import { Check, ArrowRight, Sparkles } from "lucide-react";
-import Footer from "@/components/layout/Footer";
+
 import { brandingPackages, packages, addOns } from "@/data/services";
 
 export default function Packages() {
   return (
     <main>
       <Hero>
-        <Eyebrow>OUR SERVICES</Eyebrow>
+        <Eyebrow>PACKAGES</Eyebrow>
         <HeroTitle>
           Build a brand and digital presence around your <Gradient>business goals.</Gradient>
         </HeroTitle>
@@ -131,7 +131,6 @@ export default function Packages() {
         </PrimaryLink>
       </CTA>
 
-      <Footer />
     </main>
   );
 }

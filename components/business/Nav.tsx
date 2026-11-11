@@ -9,7 +9,7 @@ import { Container, Logo, PrimaryLink } from "./shared";
 const links = [
   { label: "Home", href: "/business-page" },
   { label: "Our Work", href: "#work" },
-  { label: "Our Packages", href: "/packages" },
+  { label: "Packages", href: "/packages" },
   { label: "Contact", href: "/contact" },
 ];
 

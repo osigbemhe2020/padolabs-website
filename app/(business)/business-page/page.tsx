@@ -6,7 +6,6 @@ import { Process } from "@/components/business/Process";
 import { Work } from "@/components/business/Work";
 import { Why } from "@/components/business/Why";
 import { Cta } from "@/components/business/Cta";
-import { Footer } from "@/components/business/Footer";
 
 function HomePage() {
   return (
@@ -20,7 +19,6 @@ function HomePage() {
         <Why />
         <Cta />
       </main>
-      <Footer />
     </div>
   );
 }
